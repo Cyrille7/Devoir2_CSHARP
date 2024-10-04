@@ -28,3 +28,13 @@ C:\Users\Jeremie\Downloads\FichesJoueurs (2)\FichesJoueurs\obj\Debug\FichesJoueu
 C:\Users\Jeremie\Downloads\FichesJoueurs (2)\FichesJoueurs\obj\Debug\FichesJoueurs.Properties.Resources.resources
 C:\Users\Jeremie\Downloads\FichesJoueurs (2)\FichesJoueurs\obj\Debug\FichesJoueurs.csproj.GenerateResource.cache
 C:\Users\Jeremie\Downloads\FichesJoueurs (2)\FichesJoueurs\obj\Debug\FichesJoueurs.csproj.CoreCompileInputs.cache
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.AssemblyReference.cache
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.FichesJoueursParent.resources
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.Properties.Resources.resources
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.GenerateResource.cache
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.CoreCompileInputs.cache
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.exe
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.pdb
