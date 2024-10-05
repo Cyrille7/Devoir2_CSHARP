@@ -64,10 +64,10 @@
             this.mosaiquehorizontaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mosaiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reorganiserLesIconesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aideSurListeJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aproposDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.taperQuestionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fichesJoueursToolStrip = new System.Windows.Forms.ToolStrip();
             this.nouveauToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ouvrirToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -96,6 +96,7 @@
             this.troisiemeToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.languageToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.droitToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.taperQuestionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.hautToolStripPanel.SuspendLayout();
             this.fichesJoueursMenuStrip.SuspendLayout();
             this.fichesJoueursToolStrip.SuspendLayout();
@@ -110,7 +111,8 @@
             this.gaucheToolStripPanel.Name = "gaucheToolStripPanel";
             this.gaucheToolStripPanel.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.gaucheToolStripPanel.RowMargin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.gaucheToolStripPanel.Size = new System.Drawing.Size(0, 287);
+            this.gaucheToolStripPanel.Size = new System.Drawing.Size(0, 546);
+            this.gaucheToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.droitToolStripPanel_ControlAdded);
             // 
             // hautToolStripPanel
             // 
@@ -121,7 +123,8 @@
             this.hautToolStripPanel.Name = "hautToolStripPanel";
             this.hautToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.hautToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.hautToolStripPanel.Size = new System.Drawing.Size(668, 54);
+            this.hautToolStripPanel.Size = new System.Drawing.Size(757, 54);
+            this.hautToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.droitToolStripPanel_ControlAdded);
             // 
             // fichesJoueursMenuStrip
             // 
@@ -139,7 +142,9 @@
             this.taperQuestionToolStripTextBox});
             this.fichesJoueursMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.fichesJoueursMenuStrip.Name = "fichesJoueursMenuStrip";
-            this.fichesJoueursMenuStrip.Size = new System.Drawing.Size(668, 27);
+            this.fichesJoueursMenuStrip.MdiWindowListItem = this.fenetreToolStripMenuItem;
+            this.fichesJoueursMenuStrip.Name = "fichesJoueursMenuStrip";
+            this.fichesJoueursMenuStrip.Size = new System.Drawing.Size(757, 27);
             this.fichesJoueursMenuStrip.TabIndex = 5;
             this.fichesJoueursMenuStrip.Text = "fichesJoueursMenuStrip";
             // 
@@ -165,6 +170,7 @@
             this.nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
             this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.nouveauToolStripMenuItem.Text = "&Nouveau...";
+            this.nouveauToolStripMenuItem.Click += new System.EventHandler(this.nouveauToolStripMenuItem_Click);
             // 
             // ouvrirToolStripMenuItem
             // 
@@ -234,7 +240,7 @@
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.X)));
-            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.couperToolStripMenuItem.Text = "&Couper";
             // 
             // copierToolStripMenuItem
@@ -244,7 +250,7 @@
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.copierToolStripMenuItem.Text = "Co&pier";
             // 
             // collerToolStripMenuItem
@@ -254,7 +260,7 @@
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.V)));
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.collerToolStripMenuItem.Text = "Co&ller";
             // 
             // septimemeToolStripSeparator
@@ -265,14 +271,14 @@
             // effacerToolStripMenuItem
             // 
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.effacerToolStripMenuItem.Text = "&Effacer";
             // 
             // selectionnerToolStripMenuItem
             // 
             this.selectionnerToolStripMenuItem.Name = "selectionnerToolStripMenuItem";
             this.selectionnerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.selectionnerToolStripMenuItem.Text = "&Selectionner";
             // 
             // huitiemeToolStripSeparator
@@ -302,7 +308,7 @@
             this.professinnelToolStripMenuItem,
             this.gestionnaireToolStripMenuItem});
             this.boiteOutilsToolStripMenuItem.Name = "boiteOutilsToolStripMenuItem";
-            this.boiteOutilsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.boiteOutilsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.boiteOutilsToolStripMenuItem.Text = "&Barre d\'outils";
             // 
             // systemeToolStripMenuItem
@@ -310,20 +316,23 @@
             this.systemeToolStripMenuItem.Checked = true;
             this.systemeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.systemeToolStripMenuItem.Name = "systemeToolStripMenuItem";
-            this.systemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.systemeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.systemeToolStripMenuItem.Text = "&Systeme";
+            this.systemeToolStripMenuItem.Click += new System.EventHandler(this.StyleToolStripMenuItem_Click);
             // 
             // professinnelToolStripMenuItem
             // 
             this.professinnelToolStripMenuItem.Name = "professinnelToolStripMenuItem";
-            this.professinnelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.professinnelToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.professinnelToolStripMenuItem.Text = "&Professinnel";
+            this.professinnelToolStripMenuItem.Click += new System.EventHandler(this.StyleToolStripMenuItem_Click);
             // 
             // gestionnaireToolStripMenuItem
             // 
             this.gestionnaireToolStripMenuItem.Name = "gestionnaireToolStripMenuItem";
-            this.gestionnaireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionnaireToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.gestionnaireToolStripMenuItem.Text = "&Gestionnaire";
+            this.gestionnaireToolStripMenuItem.Click += new System.EventHandler(this.StyleToolStripMenuItem_Click);
             // 
             // insertionToolStripMenuItem
             // 
@@ -336,7 +345,7 @@
             // dateEtHeureToolStripMenuItem
             // 
             this.dateEtHeureToolStripMenuItem.Name = "dateEtHeureToolStripMenuItem";
-            this.dateEtHeureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dateEtHeureToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.dateEtHeureToolStripMenuItem.Text = "&Date et heure";
             // 
             // formatToolStripMenuItem
@@ -359,7 +368,8 @@
             this.cascadeToolStripMenuItem,
             this.mosaiquehorizontaleToolStripMenuItem,
             this.mosaiqueToolStripMenuItem,
-            this.reorganiserLesIconesToolStripMenuItem});
+            this.reorganiserLesIconesToolStripMenuItem,
+            this.toolStripSeparator1});
             this.fenetreToolStripMenuItem.Name = "fenetreToolStripMenuItem";
             this.fenetreToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.fenetreToolStripMenuItem.Text = "Fenetre";
@@ -369,24 +379,33 @@
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
             this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascade";
+            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // mosaiquehorizontaleToolStripMenuItem
             // 
             this.mosaiquehorizontaleToolStripMenuItem.Name = "mosaiquehorizontaleToolStripMenuItem";
             this.mosaiquehorizontaleToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.mosaiquehorizontaleToolStripMenuItem.Text = "Mosaique &horizontale";
+            this.mosaiquehorizontaleToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // mosaiqueToolStripMenuItem
             // 
             this.mosaiqueToolStripMenuItem.Name = "mosaiqueToolStripMenuItem";
             this.mosaiqueToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.mosaiqueToolStripMenuItem.Text = "Mosaique &verticale";
+            this.mosaiqueToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // reorganiserLesIconesToolStripMenuItem
             // 
             this.reorganiserLesIconesToolStripMenuItem.Name = "reorganiserLesIconesToolStripMenuItem";
             this.reorganiserLesIconesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.reorganiserLesIconesToolStripMenuItem.Text = "&Reorganiser les icones";
+            this.reorganiserLesIconesToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
             // 
             // aideToolStripMenuItem
             // 
@@ -409,15 +428,6 @@
             this.aproposDeToolStripMenuItem.Name = "aproposDeToolStripMenuItem";
             this.aproposDeToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.aproposDeToolStripMenuItem.Text = "A &propos de...";
-            // 
-            // taperQuestionToolStripTextBox
-            // 
-            this.taperQuestionToolStripTextBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.taperQuestionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.taperQuestionToolStripTextBox.Name = "taperQuestionToolStripTextBox";
-            this.taperQuestionToolStripTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.taperQuestionToolStripTextBox.Size = new System.Drawing.Size(125, 23);
-            this.taperQuestionToolStripTextBox.Text = "Taper une question   ";
             // 
             // fichesJoueursToolStrip
             // 
@@ -604,11 +614,12 @@
             // 
             this.basToolStripPanel.Controls.Add(this.fichesJoueursStatusStrip);
             this.basToolStripPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.basToolStripPanel.Location = new System.Drawing.Point(0, 287);
+            this.basToolStripPanel.Location = new System.Drawing.Point(0, 546);
             this.basToolStripPanel.Name = "basToolStripPanel";
             this.basToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.basToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.basToolStripPanel.Size = new System.Drawing.Size(668, 26);
+            this.basToolStripPanel.Size = new System.Drawing.Size(757, 26);
+            this.basToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.droitToolStripPanel_ControlAdded);
             // 
             // fichesJoueursStatusStrip
             // 
@@ -621,7 +632,7 @@
             this.languageToolStripStatusLabel});
             this.fichesJoueursStatusStrip.Location = new System.Drawing.Point(0, 0);
             this.fichesJoueursStatusStrip.Name = "fichesJoueursStatusStrip";
-            this.fichesJoueursStatusStrip.Size = new System.Drawing.Size(668, 26);
+            this.fichesJoueursStatusStrip.Size = new System.Drawing.Size(757, 26);
             this.fichesJoueursStatusStrip.TabIndex = 7;
             this.fichesJoueursStatusStrip.Text = "statusStrip1";
             // 
@@ -664,17 +675,28 @@
             // droitToolStripPanel
             // 
             this.droitToolStripPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.droitToolStripPanel.Location = new System.Drawing.Point(668, 0);
+            this.droitToolStripPanel.Location = new System.Drawing.Point(757, 0);
             this.droitToolStripPanel.Name = "droitToolStripPanel";
             this.droitToolStripPanel.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.droitToolStripPanel.RowMargin = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.droitToolStripPanel.Size = new System.Drawing.Size(0, 287);
+            this.droitToolStripPanel.Size = new System.Drawing.Size(0, 546);
+            this.droitToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.droitToolStripPanel_ControlAdded);
+            // 
+            // taperQuestionToolStripTextBox
+            // 
+            this.taperQuestionToolStripTextBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.taperQuestionToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.taperQuestionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.taperQuestionToolStripTextBox.Name = "taperQuestionToolStripTextBox";
+            this.taperQuestionToolStripTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.taperQuestionToolStripTextBox.Size = new System.Drawing.Size(125, 23);
+            this.taperQuestionToolStripTextBox.Text = "Taper une question   ";
             // 
             // FichesJoueursParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 313);
+            this.ClientSize = new System.Drawing.Size(757, 572);
             this.Controls.Add(this.hautToolStripPanel);
             this.Controls.Add(this.droitToolStripPanel);
             this.Controls.Add(this.gaucheToolStripPanel);
@@ -686,6 +708,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manipulation des Joueurs";
             this.Load += new System.EventHandler(this.FichesJoueursParent_Load);
+            this.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.FichesJoueursParent_ControlAdded);
             this.hautToolStripPanel.ResumeLayout(false);
             this.hautToolStripPanel.PerformLayout();
             this.fichesJoueursMenuStrip.ResumeLayout(false);
@@ -768,8 +791,9 @@
         private System.Windows.Forms.ToolStripButton droiteAlignementToolStripButton;
         private System.Windows.Forms.ToolStripSeparator troisiemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator quatriemeToolStripSeparator;
-        private System.Windows.Forms.ToolStripTextBox taperQuestionToolStripTextBox;
         private System.Windows.Forms.ToolStripSeparator huitiemeToolStripSeparator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox taperQuestionToolStripTextBox;
     }
 }
 
