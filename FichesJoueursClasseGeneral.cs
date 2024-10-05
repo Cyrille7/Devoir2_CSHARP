@@ -1,6 +1,6 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
-    Date:           10 Octobre 2024
+    Date:           7 Octobre 2024
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
     Projet:          FichesJoueurs.csproj
@@ -31,6 +31,7 @@ namespace FichesJoueurs
             CENumeroFormulaireInvalide,
 
         }
+        #endregion
 
         #region Message d'erreurs
 
@@ -38,6 +39,7 @@ namespace FichesJoueurs
         public const string ErreurCreationEnfant = "Le fichier enfant n'as pu être crée.";
         public const string ErreurIndexEnfant = "Numero du formulaire enfant invalide.";
 
+        #endregion
 
         #region Méthodes publiques - partagées
 
