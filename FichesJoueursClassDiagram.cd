@@ -1,51 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="FichesJoueurs.ClasseGeneral" Collapsed="true">
-    <Position X="4" Y="1.5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="FichesJoueurs.ClasseGeneral.CodeErreurs" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>ClasseGeneral.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
+  <Class Name="FichesJoueurs.FichesJoueursClasseGeneral" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ClasseGeneral.cs</FileName>
+      <HashCode>AAAAAAEAAIAAAAACAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>FichesJoueursClasseGeneral.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FichesJoueurs.EnfantForm" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABQAAAAACAACBAAAACAAAACAAAAAAIAAAAQQAAAAAg=</HashCode>
       <FileName>EnfantForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FichesJoueurs.FichesJoueursParent" Collapsed="true">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="3.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BFwsSQMIgOAIAEJQICGSjRLCQZnQQAlpRgABAIEqAAQ=</HashCode>
+      <HashCode>BFwsSQMIgOAIAELQICGSjRPCQZnQQIlpRoABAIEqAAQ=</HashCode>
       <FileName>FichesJoueursForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FichesJoueurs.Program" Collapsed="true">
-    <Position X="8.5" Y="0.75" Width="1.5" />
+  <Class Name="FichesJoueurs.Program" Collapsed="true" HideInheritanceLine="true">
+    <Position X="10.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FichesJoueurs.Properties.Resources" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+    <Position X="6.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAACgAAAAAgAAAAAABEAAACQACAAAAACAAAAAAAYA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="FichesJoueurs.Properties.Settings" Collapsed="true">
-    <Position X="8.5" Y="1.5" Width="1.5" />
+    <Position X="10.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

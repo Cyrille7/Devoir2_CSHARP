@@ -1,11 +1,11 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
     Date:           10 Octobre 2024
-    But:            Devoir 2 - Fiche des joueurs
+    But:            Devoir 2 (Phase B) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
-    Classe:         FichesJoueursForm.cs
+    Classes:        FichesJoueursForm.cs
 
 */
 
@@ -20,7 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using c = FichesJoueurs.ClasseGeneral;
+using c = FichesJoueurs.FichesJoueursClasseGeneral;
 
 namespace FichesJoueurs
 {
@@ -37,6 +37,7 @@ namespace FichesJoueurs
         #region Chargement du formulaire
         private void FichesJoueursParent_Load(object sender, EventArgs e)
         {
+            c.InitMessagesErreur();
             AssocierImages();
         }
 
@@ -74,18 +75,21 @@ namespace FichesJoueurs
 
         private void nouveauToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int nombreEnfants = fenetreToolStripMenuItem.DropDownItems.Count - 4;
 
             try
             {
-                EnfantForm oEnfant = new EnfantForm();
-                oEnfant.MdiParent = this;
-                oEnfant.Text += " " + nombreEnfants;
-                oEnfant.Show();
+                JoueurForm oJoueur = new JoueurForm();
+                oJoueur.MdiParent = this;
+                oJoueur.Text += " " + (JoueurForm.NombreEnfant() + 1).ToString();
+                oJoueur.Show();
             }
-            catch
+            catch(IndexOutOfRangeException)
             {
-                
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CENumeroFormulaireInvalide]);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CECreationNouveauEnfantErreur]);
             }
         }
 

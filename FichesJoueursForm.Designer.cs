@@ -64,10 +64,11 @@
             this.mosaiquehorizontaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mosaiqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reorganiserLesIconesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.neuviemeToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aideSurListeJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aproposDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taperQuestionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fichesJoueursToolStrip = new System.Windows.Forms.ToolStrip();
             this.nouveauToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ouvrirToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -96,7 +97,6 @@
             this.troisiemeToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.languageToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.droitToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.taperQuestionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.hautToolStripPanel.SuspendLayout();
             this.fichesJoueursMenuStrip.SuspendLayout();
             this.fichesJoueursToolStrip.SuspendLayout();
@@ -141,7 +141,6 @@
             this.aideToolStripMenuItem,
             this.taperQuestionToolStripTextBox});
             this.fichesJoueursMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.fichesJoueursMenuStrip.Name = "fichesJoueursMenuStrip";
             this.fichesJoueursMenuStrip.MdiWindowListItem = this.fenetreToolStripMenuItem;
             this.fichesJoueursMenuStrip.Name = "fichesJoueursMenuStrip";
             this.fichesJoueursMenuStrip.Size = new System.Drawing.Size(757, 27);
@@ -240,7 +239,7 @@
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.X)));
-            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.couperToolStripMenuItem.Text = "&Couper";
             // 
             // copierToolStripMenuItem
@@ -250,7 +249,7 @@
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.copierToolStripMenuItem.Text = "Co&pier";
             // 
             // collerToolStripMenuItem
@@ -260,37 +259,37 @@
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.V)));
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.collerToolStripMenuItem.Text = "Co&ller";
             // 
             // septimemeToolStripSeparator
             // 
             this.septimemeToolStripSeparator.Name = "septimemeToolStripSeparator";
-            this.septimemeToolStripSeparator.Size = new System.Drawing.Size(183, 6);
+            this.septimemeToolStripSeparator.Size = new System.Drawing.Size(179, 6);
             // 
             // effacerToolStripMenuItem
             // 
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.effacerToolStripMenuItem.Text = "&Effacer";
             // 
             // selectionnerToolStripMenuItem
             // 
             this.selectionnerToolStripMenuItem.Name = "selectionnerToolStripMenuItem";
             this.selectionnerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.selectionnerToolStripMenuItem.Text = "&Selectionner";
             // 
             // huitiemeToolStripSeparator
             // 
             this.huitiemeToolStripSeparator.Name = "huitiemeToolStripSeparator";
-            this.huitiemeToolStripSeparator.Size = new System.Drawing.Size(183, 6);
+            this.huitiemeToolStripSeparator.Size = new System.Drawing.Size(179, 6);
             // 
             // rechercherToolStripMenuItem
             // 
             this.rechercherToolStripMenuItem.Image = global::FichesJoueurs.Properties.Resources.search;
             this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.rechercherToolStripMenuItem.Text = "&Rechercher";
             // 
             // affichageToolStripMenuItem
@@ -369,7 +368,7 @@
             this.mosaiquehorizontaleToolStripMenuItem,
             this.mosaiqueToolStripMenuItem,
             this.reorganiserLesIconesToolStripMenuItem,
-            this.toolStripSeparator1});
+            this.neuviemeToolStripSeparator});
             this.fenetreToolStripMenuItem.Name = "fenetreToolStripMenuItem";
             this.fenetreToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.fenetreToolStripMenuItem.Text = "Fenetre";
@@ -402,10 +401,10 @@
             this.reorganiserLesIconesToolStripMenuItem.Text = "&Reorganiser les icones";
             this.reorganiserLesIconesToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
+            // neuviemeToolStripSeparator
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            this.neuviemeToolStripSeparator.Name = "neuviemeToolStripSeparator";
+            this.neuviemeToolStripSeparator.Size = new System.Drawing.Size(187, 6);
             // 
             // aideToolStripMenuItem
             // 
@@ -428,6 +427,15 @@
             this.aproposDeToolStripMenuItem.Name = "aproposDeToolStripMenuItem";
             this.aproposDeToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.aproposDeToolStripMenuItem.Text = "A &propos de...";
+            // 
+            // taperQuestionToolStripTextBox
+            // 
+            this.taperQuestionToolStripTextBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.taperQuestionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.taperQuestionToolStripTextBox.Name = "taperQuestionToolStripTextBox";
+            this.taperQuestionToolStripTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.taperQuestionToolStripTextBox.Size = new System.Drawing.Size(125, 23);
+            this.taperQuestionToolStripTextBox.Text = "Taper une question   ";
             // 
             // fichesJoueursToolStrip
             // 
@@ -682,16 +690,6 @@
             this.droitToolStripPanel.Size = new System.Drawing.Size(0, 546);
             this.droitToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.droitToolStripPanel_ControlAdded);
             // 
-            // taperQuestionToolStripTextBox
-            // 
-            this.taperQuestionToolStripTextBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.taperQuestionToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.taperQuestionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.taperQuestionToolStripTextBox.Name = "taperQuestionToolStripTextBox";
-            this.taperQuestionToolStripTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.taperQuestionToolStripTextBox.Size = new System.Drawing.Size(125, 23);
-            this.taperQuestionToolStripTextBox.Text = "Taper une question   ";
-            // 
             // FichesJoueursParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,7 +790,7 @@
         private System.Windows.Forms.ToolStripSeparator troisiemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator quatriemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator huitiemeToolStripSeparator;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator neuviemeToolStripSeparator;
         private System.Windows.Forms.ToolStripTextBox taperQuestionToolStripTextBox;
     }
 }

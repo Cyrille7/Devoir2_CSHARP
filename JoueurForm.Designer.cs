@@ -1,6 +1,6 @@
 ﻿namespace FichesJoueurs
 {
-    partial class EnfantForm
+    partial class JoueurForm
     {
         /// <summary>
         /// Required designer variable.
