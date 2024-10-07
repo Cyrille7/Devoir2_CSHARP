@@ -34,7 +34,7 @@
             this.nomTextBox = new System.Windows.Forms.TextBox();
             this.nomLabel = new System.Windows.Forms.Label();
             this.telephoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.infoRichTextBox = new System.Windows.Forms.RichTextBox();
             this.infoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             this.prenomTextBox.Name = "prenomTextBox";
             this.prenomTextBox.Size = new System.Drawing.Size(286, 20);
             this.prenomTextBox.TabIndex = 9;
+            this.prenomTextBox.TextChanged += new System.EventHandler(this.clientTextBox_TextChanged);
             // 
             // label1
             // 
@@ -69,6 +70,7 @@
             this.nomTextBox.Name = "nomTextBox";
             this.nomTextBox.Size = new System.Drawing.Size(286, 20);
             this.nomTextBox.TabIndex = 7;
+            this.nomTextBox.TextChanged += new System.EventHandler(this.clientTextBox_TextChanged);
             // 
             // nomLabel
             // 
@@ -86,14 +88,16 @@
             this.telephoneMaskedTextBox.Name = "telephoneMaskedTextBox";
             this.telephoneMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.telephoneMaskedTextBox.TabIndex = 12;
+            this.telephoneMaskedTextBox.TextChanged += new System.EventHandler(this.clientTextBox_TextChanged);
             // 
-            // richTextBox1
+            // infoRichTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(89, 119);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(286, 196);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.infoRichTextBox.Location = new System.Drawing.Point(89, 119);
+            this.infoRichTextBox.Name = "infoRichTextBox";
+            this.infoRichTextBox.Size = new System.Drawing.Size(286, 196);
+            this.infoRichTextBox.TabIndex = 13;
+            this.infoRichTextBox.Text = "";
+            this.infoRichTextBox.TextChanged += new System.EventHandler(this.clientTextBox_TextChanged);
             // 
             // infoLabel
             // 
@@ -104,21 +108,22 @@
             this.infoLabel.TabIndex = 14;
             this.infoLabel.Text = "Info:";
             // 
-            // EnfantForm
+            // JoueurForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 333);
             this.Controls.Add(this.infoLabel);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.infoRichTextBox);
             this.Controls.Add(this.telephoneMaskedTextBox);
             this.Controls.Add(this.telephoneLabel);
             this.Controls.Add(this.prenomTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nomTextBox);
             this.Controls.Add(this.nomLabel);
-            this.Name = "EnfantForm";
+            this.Name = "JoueurForm";
             this.Text = "Joueur";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Enfant_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,12 +132,12 @@
         #endregion
 
         private System.Windows.Forms.Label telephoneLabel;
-        private System.Windows.Forms.TextBox prenomTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox nomTextBox;
         private System.Windows.Forms.Label nomLabel;
-        private System.Windows.Forms.MaskedTextBox telephoneMaskedTextBox;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label infoLabel;
+        internal System.Windows.Forms.TextBox prenomTextBox;
+        internal System.Windows.Forms.TextBox nomTextBox;
+        internal System.Windows.Forms.MaskedTextBox telephoneMaskedTextBox;
+        internal System.Windows.Forms.RichTextBox infoRichTextBox;
     }
 }
