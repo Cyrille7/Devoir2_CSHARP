@@ -1,6 +1,6 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
-    Date:           7 Octobre 2024
+    Date:           10 Octobre 2024
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
     Projet:          FichesJoueurs.csproj
@@ -29,8 +29,8 @@ namespace FichesJoueurs
         {
             CECreationNouveauEnfantErreur,
             CENumeroFormulaireInvalide,
-
         }
+
         #endregion
 
         #region Message d'erreurs
@@ -47,7 +47,7 @@ namespace FichesJoueurs
         public static void InitMessagesErreur()
         {
             tabMessagesErreursStr[(int)ce.CECreationNouveauEnfantErreur] = ErreurCreationEnfant;
-            tabMessagesErreursStr[(int)ce.CECreationNouveauEnfantErreur] = ErreurIndexEnfant;
+            tabMessagesErreursStr[(int)ce.CENumeroFormulaireInvalide] = ErreurIndexEnfant;
         }
         #endregion
 
@@ -71,5 +71,7 @@ namespace FichesJoueurs
         #endregion
 
         #endregion
+
+        
     }
 }

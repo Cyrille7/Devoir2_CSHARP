@@ -3,15 +3,15 @@
   <Class Name="FichesJoueurs.FichesJoueursClasseGeneral" Collapsed="true">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAIAAAAACAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAIAAAAACAAAAAAAAAAAAAAAAAgAAAIAAAAA=</HashCode>
       <FileName>FichesJoueursClasseGeneral.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FichesJoueurs.EnfantForm" Collapsed="true">
+  <Class Name="FichesJoueurs.JoueurForm" Collapsed="true">
     <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABQAAAAACAACBAAAACAAAACAAAAAAIAAAAQQAAAAAg=</HashCode>
-      <FileName>EnfantForm.cs</FileName>
+      <HashCode>AABQAAAAACAACBCAAACAACACAAAAAAIAAAAQQAAAAAg=</HashCode>
+      <FileName>JoueurForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FichesJoueurs.FichesJoueursParent" Collapsed="true">
