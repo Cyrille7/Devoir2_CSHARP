@@ -1,12 +1,11 @@
 ﻿/*
-    Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
+    Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
     Date:           7 Octobre 2024
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
-    Projet:          FichesJoueurs.csproj
-    Solution:        FichesJoueurs.sln
-    Classes:         ClasseGeneral.cs
-                     
+    Projet:         FichesJoueurs.csproj
+    Solution:       FichesJoueurs.sln
+    Classes:        FichesJoueursClasseGeneral.cs       
 
 */
 
@@ -47,10 +46,9 @@ namespace FichesJoueurs
         public static void InitMessagesErreur()
         {
             tabMessagesErreursStr[(int)ce.CECreationNouveauEnfantErreur] = ErreurCreationEnfant;
-            tabMessagesErreursStr[(int)ce.CECreationNouveauEnfantErreur] = ErreurIndexEnfant;
+            tabMessagesErreursStr[(int)ce.CENumeroFormulaireInvalide] = ErreurIndexEnfant;
         }
         #endregion
-
 
         #region Enlever le crochet sur les sous menu
 

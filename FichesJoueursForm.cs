@@ -1,5 +1,5 @@
 ﻿/*
-    Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
+    Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
     Date:           7 Octobre 2024
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
@@ -26,6 +26,11 @@ namespace FichesJoueurs
 {
     public partial class FichesJoueursParent : Form
     {
+        #region Variables
+
+        private int nbClients = 1;
+
+        #endregion
 
         #region Constructeur
         public FichesJoueursParent()
@@ -43,9 +48,6 @@ namespace FichesJoueurs
 
         #endregion
 
-
-        // Methodes pour associer les images aux composants
-
         #region Association d'image
 
         private void AssocierImages()
@@ -61,6 +63,7 @@ namespace FichesJoueurs
 
         #endregion
 
+        #region Render Mode
         private void StyleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int menuStripRenderModeInt;
@@ -73,15 +76,18 @@ namespace FichesJoueurs
             ((ToolStripMenuItem)sender).Checked = true;
         }
 
-        private void nouveauToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        #endregion
 
+        #region Nouveau enfant
+        private void FichierNouveauDocument_Click(object sender, EventArgs e)
+        {
             try
             {
                 JoueurForm oJoueur = new JoueurForm();
                 oJoueur.MdiParent = this;
-                oJoueur.Text += " " + (JoueurForm.NombreEnfant() + 1).ToString();
+                oJoueur.Text += " " + (nbClients).ToString();
                 oJoueur.Show();
+                nbClients++;
             }
             catch(IndexOutOfRangeException)
             {
@@ -93,7 +99,10 @@ namespace FichesJoueurs
             }
         }
 
-        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        #endregion
+
+        #region MdiLayout
+        private void FenetreMdiLayout_Click(object sender, EventArgs e)
         {
             int layoutMdiInt;
             layoutMdiInt = fenetreToolStripMenuItem.DropDownItems.IndexOf((ToolStripMenuItem)sender);
@@ -105,12 +114,10 @@ namespace FichesJoueurs
             ((ToolStripMenuItem)sender).Checked = true;
         }
 
-        private void FichesJoueursParent_ControlAdded(object sender, ControlEventArgs e)
-        {
+        #endregion
 
-        }
-
-        private void droitToolStripPanel_ControlAdded(object sender, ControlEventArgs e)
+        #region ToolStripPanel
+        private void QuatrePaneaux_ControlAdded(object sender, ControlEventArgs e)
         {
             if (e.Control == fichesJoueursMenuStrip)
             {
@@ -141,5 +148,7 @@ namespace FichesJoueurs
                 }
             }
         }
+
+        #endregion
     }
 }

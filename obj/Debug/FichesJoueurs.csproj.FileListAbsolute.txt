@@ -20,3 +20,14 @@ C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Deb
 C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
 C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
 C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.AssemblyReference.cache
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.FichesJoueursParent.resources
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.JoueurForm.resources
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.Properties.Resources.resources
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.GenerateResource.cache
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.CoreCompileInputs.cache
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.exe
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.pdb
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
+C:\Users\Jeremie\Desktop\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
