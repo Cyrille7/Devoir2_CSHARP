@@ -1,6 +1,8 @@
 ﻿/*
+
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           7 Octobre 2024
+    Date:           10 Octobre 2024
+
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
@@ -29,8 +31,8 @@ namespace FichesJoueurs
             CECreationNouveauEnfantErreur,
             CENumeroFormulaireInvalide,
             CEErreurGeneral,
-
         }
+
         #endregion
 
         #region Message d'erreurs
@@ -72,5 +74,7 @@ namespace FichesJoueurs
         #endregion
 
         #endregion
+
+        
     }
 }
