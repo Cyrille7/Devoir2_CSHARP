@@ -44,6 +44,7 @@ namespace FichesJoueurs
         {
             c.InitMessagesErreur();
             AssocierImages();
+            fichesJoueursOpenFileDialog.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (.)| .";
         }
 
         #endregion
@@ -147,6 +148,95 @@ namespace FichesJoueurs
                     deuxiemeToolStripComboBox.Visible = true;
                 }
             }
+        }
+
+        #endregion
+
+        #region Enregistrer ou Enregistrer sous
+
+        private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                JoueurForm oJoueur;
+                oJoueur = (JoueurForm)this.ActiveMdiChild;
+
+                if (sender == enregistrersousToolStripMenuItem)
+                    oJoueur.EnregistrerSous();
+                else
+                    oJoueur.Enregistrer();
+            }
+        }
+
+        #endregion
+
+        #region Ouvrir
+
+        private void ouvrirToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fichesJoueursOpenFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (fichesJoueursOpenFileDialog.FileName.EndsWith(".rtf"))
+                    {
+                        JoueurForm oJoueur = new JoueurForm();
+                        oJoueur.MdiParent = this;
+                        oJoueur.Text = fichesJoueursOpenFileDialog.FileName;
+
+                        // oEnfant.clientRichTextBox.LoadFile(ofd.FileName);
+
+                        RichTextBox ortf = new RichTextBox();
+
+                        ortf.LoadFile(fichesJoueursOpenFileDialog.FileName);
+
+                        oJoueur.nomTextBox.Text = ortf.Lines[0];
+                        oJoueur.prenomTextBox.Text = ortf.Lines[1];
+                        oJoueur.telephoneMaskedTextBox.Text = ortf.Lines[2];
+
+                        ortf.SelectionStart = 0;
+                        ortf.SelectionLength = ortf.Lines[0].Length + ortf.Lines[1].Length + ortf.Lines[2].Length + 3; // ne pas oublier changement de ligne
+                        ortf.SelectedText = String.Empty;
+
+                        oJoueur.infoRichTextBox.Rtf = ortf.Rtf;
+
+                        oJoueur.Enregistrement = true;
+                        oJoueur.infoRichTextBox.Modified = false;
+                        oJoueur.Modification = false;
+
+                        oJoueur.Show();
+                    }
+                    else
+                        MessageBox.Show("Vous ne pouvez ouvrir que des fichiers portant l'extension .rtf avec  l'application FichesJoueurs", "Ouvrir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+        }
+
+        #endregion
+
+        #region Fermer
+
+        private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveControl != null || ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Dispose();
+            }
+        }
+
+
+        #endregion
+
+        #region Quitter
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         #endregion

@@ -28,15 +28,17 @@ namespace FichesJoueurs
         {
             CECreationNouveauEnfantErreur,
             CENumeroFormulaireInvalide,
+            CEErreurGeneral,
 
         }
         #endregion
 
         #region Message d'erreurs
 
-        public static string[] tabMessagesErreursStr = new string[2];
+        public static string[] tabMessagesErreursStr = new string[3];
         public const string ErreurCreationEnfant = "Le fichier enfant n'as pu être crée.";
         public const string ErreurIndexEnfant = "Numero du formulaire enfant invalide.";
+        public const string ErreurGeneral = "Une erreur c'est produite. Contactez le programmeur";
 
         #endregion
 
@@ -47,6 +49,7 @@ namespace FichesJoueurs
         {
             tabMessagesErreursStr[(int)ce.CECreationNouveauEnfantErreur] = ErreurCreationEnfant;
             tabMessagesErreursStr[(int)ce.CENumeroFormulaireInvalide] = ErreurIndexEnfant;
+            tabMessagesErreursStr[(int)ce.CEErreurGeneral] = ErreurGeneral;
         }
         #endregion
 

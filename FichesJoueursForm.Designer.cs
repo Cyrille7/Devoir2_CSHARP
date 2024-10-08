@@ -97,6 +97,7 @@
             this.troisiemeToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.languageToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.droitToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.fichesJoueursOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.hautToolStripPanel.SuspendLayout();
             this.fichesJoueursMenuStrip.SuspendLayout();
             this.fichesJoueursToolStrip.SuspendLayout();
@@ -167,7 +168,7 @@
             this.nouveauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nouveauToolStripMenuItem.Image")));
             this.nouveauToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
-            this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.nouveauToolStripMenuItem.Text = "&Nouveau...";
             this.nouveauToolStripMenuItem.Click += new System.EventHandler(this.FichierNouveauDocument_Click);
             // 
@@ -177,14 +178,16 @@
             this.ouvrirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             this.ouvrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.ouvrirToolStripMenuItem.Text = "&Ouvrir";
+            this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripButton_Click);
             // 
             // fermerToolStripMenuItem
             // 
             this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.fermerToolStripMenuItem.Text = "&Fermer";
+            this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
             // 
             // cinquiemeToolStripSeparator
             // 
@@ -195,16 +198,18 @@
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
             this.enregistrerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.enregistrerToolStripMenuItem.Text = "Enregistrer";
+            this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // enregistrersousToolStripMenuItem
             // 
             this.enregistrersousToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("enregistrersousToolStripMenuItem.Image")));
             this.enregistrersousToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.enregistrersousToolStripMenuItem.Name = "enregistrersousToolStripMenuItem";
-            this.enregistrersousToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.enregistrersousToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.enregistrersousToolStripMenuItem.Text = "&Enregistrer sous...";
+            this.enregistrersousToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // sixemeToolStripSeparator
             // 
@@ -214,8 +219,9 @@
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.quitterToolStripMenuItem.Text = "&Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // editionToolStripMenuItem
             // 
@@ -464,7 +470,7 @@
             this.aideToolStripButton});
             this.fichesJoueursToolStrip.Location = new System.Drawing.Point(3, 27);
             this.fichesJoueursToolStrip.Name = "fichesJoueursToolStrip";
-            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(643, 27);
+            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(612, 27);
             this.fichesJoueursToolStrip.TabIndex = 6;
             this.fichesJoueursToolStrip.Text = "fichesJoueursToolStrip";
             // 
@@ -486,6 +492,7 @@
             this.ouvrirToolStripButton.Name = "ouvrirToolStripButton";
             this.ouvrirToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.ouvrirToolStripButton.Text = "&Ouvrir";
+            this.ouvrirToolStripButton.Click += new System.EventHandler(this.ouvrirToolStripButton_Click);
             // 
             // enregistrerToolStripButton
             // 
@@ -495,6 +502,7 @@
             this.enregistrerToolStripButton.Name = "enregistrerToolStripButton";
             this.enregistrerToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.enregistrerToolStripButton.Text = "&Enregistrer";
+            this.enregistrerToolStripButton.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // imprimerToolStripButton
             // 
@@ -691,6 +699,10 @@
             this.droitToolStripPanel.Size = new System.Drawing.Size(0, 546);
             this.droitToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.QuatrePaneaux_ControlAdded);
             // 
+            // fichesJoueursOpenFileDialog
+            // 
+            this.fichesJoueursOpenFileDialog.FileName = "openFileDialog1";
+            // 
             // FichesJoueursParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,6 +804,7 @@
         private System.Windows.Forms.ToolStripSeparator huitiemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator neuviemeToolStripSeparator;
         private System.Windows.Forms.ToolStripTextBox taperQuestionToolStripTextBox;
+        private System.Windows.Forms.OpenFileDialog fichesJoueursOpenFileDialog;
     }
 }
 
