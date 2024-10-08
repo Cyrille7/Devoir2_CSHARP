@@ -1,11 +1,11 @@
 ﻿/*
-    Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
+    Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
     Date:           7 Octobre 2024
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
-    Projet:          FichesJoueurs.csproj
-    Solution:        FichesJoueurs.sln
-    Classe:          EnfantForm.cs
+    Projet:         FichesJoueurs.csproj
+    Solution:       FichesJoueurs.sln
+    Classe:         JoueurForm.cs
 
 */
 
@@ -23,22 +23,13 @@ namespace FichesJoueurs
 {
     public partial class JoueurForm : Form
     {
-        public static int nombre = 0;
+        #region Initialisation
+
         public JoueurForm()
         {
             InitializeComponent();
         }
 
-        public static int NombreEnfant()
-        {
-            try
-            {
-                return nombre++;
-            }
-            catch 
-            {
-                throw new IndexOutOfRangeException("Erreur d'index");
-            }
-        }
+        #endregion
     }
 }

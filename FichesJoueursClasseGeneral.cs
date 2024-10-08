@@ -1,12 +1,16 @@
 ﻿/*
+<<<<<<< HEAD
     Programmeurs:   Alexandre Roy, Cyrille Sonfack, Jérémie Rousselle, Stéphane Nkontie
     Date:           10 Octobre 2024
+=======
+    Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
+    Date:           7 Octobre 2024
+>>>>>>> f4c2721aaabe6280785dd4e9822e2deecca29016
     But:            Devoir 2 (Phase B) - Fiche des joueurs
 
-    Projet:          FichesJoueurs.csproj
-    Solution:        FichesJoueurs.sln
-    Classes:         ClasseGeneral.cs
-                     
+    Projet:         FichesJoueurs.csproj
+    Solution:       FichesJoueurs.sln
+    Classes:        FichesJoueursClasseGeneral.cs       
 
 */
 
@@ -50,7 +54,6 @@ namespace FichesJoueurs
             tabMessagesErreursStr[(int)ce.CENumeroFormulaireInvalide] = ErreurIndexEnfant;
         }
         #endregion
-
 
         #region Enlever le crochet sur les sous menu
 
