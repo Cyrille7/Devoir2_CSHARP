@@ -20,3 +20,14 @@ C:\Users\Jeremie\Desktop\Devoir2_CSHARP\obj\Debug\FichesJoueurs.pdb
 C:\Users\Jeremie\Desktop\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
 C:\Users\Jeremie\Desktop\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
 C:\Users\Jeremie\Desktop\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.AssemblyReference.cache
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.JoueurForm.resources
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.FichesJoueursParent.resources
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.Properties.Resources.resources
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.GenerateResource.cache
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.exe
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.pdb
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
+C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
