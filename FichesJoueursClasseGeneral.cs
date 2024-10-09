@@ -3,7 +3,7 @@
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
     Date:           10 Octobre 2024
 
-    But:            Devoir 2 (Phase B) - Fiche des joueurs
+    But:            Devoir 2 (Phase C) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -31,16 +31,18 @@ namespace FichesJoueurs
             CECreationNouveauEnfantErreur,
             CENumeroFormulaireInvalide,
             CEErreurGeneral,
+            CEErreurExtensionInvalide
         }
 
         #endregion
 
         #region Message d'erreurs
 
-        public static string[] tabMessagesErreursStr = new string[3];
+        public static string[] tabMessagesErreursStr = new string[4];
         public const string ErreurCreationEnfant = "Le fichier enfant n'as pu être crée.";
         public const string ErreurIndexEnfant = "Numero du formulaire enfant invalide.";
         public const string ErreurGeneral = "Une erreur c'est produite. Contactez le programmeur";
+        public const string ErreurExtension = "Vous ne pouvez ouvrir que des fichiers portant l'extension .rtf avec  l'application FichesJoueurs";
 
         #endregion
 
@@ -52,6 +54,7 @@ namespace FichesJoueurs
             tabMessagesErreursStr[(int)ce.CECreationNouveauEnfantErreur] = ErreurCreationEnfant;
             tabMessagesErreursStr[(int)ce.CENumeroFormulaireInvalide] = ErreurIndexEnfant;
             tabMessagesErreursStr[(int)ce.CEErreurGeneral] = ErreurGeneral;
+            tabMessagesErreursStr[(int)ce.CEErreurExtensionInvalide] = ErreurExtension;
         }
         #endregion
 

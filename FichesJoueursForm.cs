@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           7 Octobre 2024
-    But:            Devoir 2 (Phase B) - Fiche des joueurs
+    Date:           10 Octobre 2024
+    But:            Devoir 2 (Phase C) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -44,7 +44,12 @@ namespace FichesJoueurs
         {
             c.InitMessagesErreur();
             AssocierImages();
-            fichesJoueursOpenFileDialog.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (.)| .";
+            fichesJoueursOpenFileDialog.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (*.*)| *.*";
+
+            fichesJoueursOpenFileDialog.DefaultExt = ".rtf";
+            fichesJoueursOpenFileDialog.AddExtension = true;
+            fichesJoueursOpenFileDialog.CheckFileExists = true;
+            fichesJoueursOpenFileDialog.CheckPathExists = true;
         }
 
         #endregion
@@ -156,15 +161,21 @@ namespace FichesJoueurs
 
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.ActiveMdiChild != null)
+            try
             {
-                JoueurForm oJoueur;
-                oJoueur = (JoueurForm)this.ActiveMdiChild;
+                if (this.ActiveMdiChild != null)
+                {
+                JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
 
                 if (sender == enregistrersousToolStripMenuItem)
                     oJoueur.EnregistrerSous();
                 else
                     oJoueur.Enregistrer();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
 
@@ -183,8 +194,6 @@ namespace FichesJoueurs
                         JoueurForm oJoueur = new JoueurForm();
                         oJoueur.MdiParent = this;
                         oJoueur.Text = fichesJoueursOpenFileDialog.FileName;
-
-                        // oEnfant.clientRichTextBox.LoadFile(ofd.FileName);
 
                         RichTextBox ortf = new RichTextBox();
 
@@ -207,7 +216,7 @@ namespace FichesJoueurs
                         oJoueur.Show();
                     }
                     else
-                        MessageBox.Show("Vous ne pouvez ouvrir que des fichiers portant l'extension .rtf avec  l'application FichesJoueurs", "Ouvrir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurExtensionInvalide], "Ouvrir", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }

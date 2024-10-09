@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           7 Octobre 2024
-    But:            Devoir 2 (Phase B) - Fiche des joueurs
+    Date:           10 Octobre 2024
+    But:            Devoir 2 (Phase C) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -72,14 +72,14 @@ namespace FichesJoueurs
 
         #endregion
 
-        #region Formulaire ferme
+        #region Fermeture du formulaire enfant
 
         private void Joueur_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult oDialogResult;
-
+            
             try
             {
+                DialogResult oDialogResult;
 
                 if (Modification)
                 {
@@ -129,11 +129,7 @@ namespace FichesJoueurs
             {
                 if (Modification)
                 {
-                    if (!Enregistrement)
-                    {
-                        EnregistrerSous();
-                    }
-                    else
+                    if (Enregistrement)
                     {
                         // Utiliser une méthode pour Sauvegarder...
 
@@ -141,6 +137,10 @@ namespace FichesJoueurs
 
                         // Pas de changement
                         Modification = false;
+                    }
+                    else
+                    {
+                        EnregistrerSous();
                     }
                 }
             }
@@ -157,7 +157,7 @@ namespace FichesJoueurs
             {
                 SaveFileDialog sfd = new SaveFileDialog();
 
-                sfd.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (.)| .";
+                sfd.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (*.*)| *.*";
                 sfd.DefaultExt = ".rtf";
                 sfd.Title = "Enregistrer le client";
                 sfd.AddExtension = true;
@@ -181,9 +181,9 @@ namespace FichesJoueurs
                         MessageBox.Show("L'extension RTF doit etre utilise.", "Enregistrer sous du document", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch
+            catch(Exception)
             {
-
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
 
         }
