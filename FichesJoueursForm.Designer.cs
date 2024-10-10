@@ -245,7 +245,7 @@
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.X)));
-            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.couperToolStripMenuItem.Text = "&Couper";
             // 
             // copierToolStripMenuItem
@@ -255,7 +255,7 @@
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.copierToolStripMenuItem.Text = "Co&pier";
             // 
             // collerToolStripMenuItem
@@ -265,7 +265,7 @@
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.V)));
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.collerToolStripMenuItem.Text = "Co&ller";
             // 
             // septimemeToolStripSeparator
@@ -276,14 +276,14 @@
             // effacerToolStripMenuItem
             // 
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.effacerToolStripMenuItem.Text = "&Effacer";
             // 
             // selectionnerToolStripMenuItem
             // 
             this.selectionnerToolStripMenuItem.Name = "selectionnerToolStripMenuItem";
             this.selectionnerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.selectionnerToolStripMenuItem.Text = "&Selectionner";
             // 
             // huitiemeToolStripSeparator
@@ -295,7 +295,7 @@
             // 
             this.rechercherToolStripMenuItem.Image = global::FichesJoueurs.Properties.Resources.search;
             this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.rechercherToolStripMenuItem.Text = "&Rechercher";
             // 
             // affichageToolStripMenuItem
@@ -470,7 +470,7 @@
             this.aideToolStripButton});
             this.fichesJoueursToolStrip.Location = new System.Drawing.Point(3, 27);
             this.fichesJoueursToolStrip.Name = "fichesJoueursToolStrip";
-            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(612, 27);
+            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(643, 27);
             this.fichesJoueursToolStrip.TabIndex = 6;
             this.fichesJoueursToolStrip.Text = "fichesJoueursToolStrip";
             // 
@@ -754,9 +754,6 @@
         private System.Windows.Forms.ToolStripMenuItem enregistrersousToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem couperToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem collerToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator septimemeToolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem affichageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem boiteOutilsToolStripMenuItem;
@@ -766,9 +763,6 @@
         private System.Windows.Forms.ToolStripButton enregistrerToolStripButton;
         private System.Windows.Forms.ToolStripButton imprimerToolStripButton;
         private System.Windows.Forms.ToolStripSeparator premierToolStripSeparator;
-        private System.Windows.Forms.ToolStripButton couperToolStripButton;
-        private System.Windows.Forms.ToolStripButton copierToolStripButton;
-        private System.Windows.Forms.ToolStripButton collerToolStripButton;
         private System.Windows.Forms.ToolStripSeparator deuxiemeToolStripSeparator;
         private System.Windows.Forms.StatusStrip fichesJoueursStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel creerOuvrirJoueurToolStripStatusLabel;
@@ -799,18 +793,24 @@
         private System.Windows.Forms.ToolStripButton aideToolStripButton;
         private System.Windows.Forms.ToolStripComboBox premierToolStripComboBox;
         private System.Windows.Forms.ToolStripComboBox deuxiemeToolStripComboBox;
-        private System.Windows.Forms.ToolStripButton grasToolStripButton;
-        private System.Windows.Forms.ToolStripButton italiqueToolStripButton;
-        private System.Windows.Forms.ToolStripButton soulignementToolStripButton;
-        private System.Windows.Forms.ToolStripButton gaucheAlignementToolStripButton;
-        private System.Windows.Forms.ToolStripButton centreAlignementToolStripButton;
-        private System.Windows.Forms.ToolStripButton droiteAlignementToolStripButton;
         private System.Windows.Forms.ToolStripSeparator troisiemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator quatriemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator huitiemeToolStripSeparator;
         private System.Windows.Forms.ToolStripSeparator neuviemeToolStripSeparator;
         private System.Windows.Forms.ToolStripTextBox taperQuestionToolStripTextBox;
         private System.Windows.Forms.OpenFileDialog fichesJoueursOpenFileDialog;
+        internal System.Windows.Forms.ToolStripMenuItem couperToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem copierToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem collerToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripButton couperToolStripButton;
+        internal System.Windows.Forms.ToolStripButton copierToolStripButton;
+        internal System.Windows.Forms.ToolStripButton collerToolStripButton;
+        internal System.Windows.Forms.ToolStripButton grasToolStripButton;
+        internal System.Windows.Forms.ToolStripButton italiqueToolStripButton;
+        internal System.Windows.Forms.ToolStripButton soulignementToolStripButton;
+        internal System.Windows.Forms.ToolStripButton gaucheAlignementToolStripButton;
+        internal System.Windows.Forms.ToolStripButton centreAlignementToolStripButton;
+        internal System.Windows.Forms.ToolStripButton droiteAlignementToolStripButton;
     }
 }
 

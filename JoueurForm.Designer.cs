@@ -97,6 +97,7 @@
             this.infoRichTextBox.Size = new System.Drawing.Size(286, 196);
             this.infoRichTextBox.TabIndex = 13;
             this.infoRichTextBox.Text = "";
+            this.infoRichTextBox.SelectionChanged += new System.EventHandler(this.RichTextBox_SelectionChanged);
             this.infoRichTextBox.TextChanged += new System.EventHandler(this.JoueurFormTextBox_TextChanged);
             // 
             // infoLabel

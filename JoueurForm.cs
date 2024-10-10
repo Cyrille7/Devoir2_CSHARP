@@ -215,6 +215,78 @@ namespace FichesJoueurs
         }
 
         #endregion
-        
+
+        #region RichTextBox_SelectionChanged
+
+        private void RichTextBox_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FichesJoueursParent parent = (FichesJoueursParent)this.MdiParent;
+         
+                parent.grasToolStripButton.Checked = infoRichTextBox.SelectionFont.Bold;
+                parent.italiqueToolStripButton.Checked = infoRichTextBox.SelectionFont.Italic;
+                parent.soulignementToolStripButton.Checked = infoRichTextBox.SelectionFont.Underline;
+                
+                if (Clipboard.ContainsText() || Clipboard.ContainsImage())
+                {
+                    parent.collerToolStripButton.Enabled = true;
+                    parent.collerToolStripMenuItem.Enabled = true;
+                }
+                else
+                {
+                    parent.collerToolStripButton.Enabled = false;
+                    parent.collerToolStripMenuItem.Enabled = false;
+                }
+
+                parent.copierToolStripMenuItem.Enabled = infoRichTextBox.SelectionLength > 0;
+                parent.copierToolStripButton.Enabled = infoRichTextBox.SelectionLength > 0;
+
+                switch (infoRichTextBox.SelectionAlignment)
+                {
+                    case HorizontalAlignment.Left:
+                        parent.gaucheAlignementToolStripButton.Checked = true;
+                        parent.centreAlignementToolStripButton.Checked = false;
+                        parent.droiteAlignementToolStripButton.Checked = false;
+                        break;
+                    case HorizontalAlignment.Center:
+                        parent.gaucheAlignementToolStripButton.Checked = false;
+                        parent.centreAlignementToolStripButton.Checked = true;
+                        parent.droiteAlignementToolStripButton.Checked = false;
+                        break;
+                    case HorizontalAlignment.Right:
+                        parent.gaucheAlignementToolStripButton.Checked = false;
+                        parent.centreAlignementToolStripButton.Checked = false;
+                        parent.droiteAlignementToolStripButton.Checked = true;
+                        break;
+                }
+
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
+        #endregion
+
+        private void ClientActivated()
+        {
+            RichTextBox_SelectionChanged(null ,null);
+        }
+
+        private void ChangerAttributsPolice(FontStyle style)
+        {
+            try
+            {
+
+
+
+            }
+            catch
+            {
+                
+            }
+        }
     }
 }
