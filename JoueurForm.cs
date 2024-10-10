@@ -270,10 +270,13 @@ namespace FichesJoueurs
 
         #endregion
 
+        #region ClientActivated
         private void ClientActivated()
         {
             RichTextBox_SelectionChanged(null ,null);
         }
+
+        #endregion
 
         private void ChangerAttributsPolice(FontStyle style)
         {
