@@ -76,7 +76,7 @@ namespace FichesJoueurs
 
         private void Joueur_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
             try
             {
                 DialogResult oDialogResult;
@@ -143,6 +143,9 @@ namespace FichesJoueurs
                         EnregistrerSous();
                     }
                 }
+                else
+                    MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurFichierVide], "Enregistrement du document", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             catch (Exception)
             {
@@ -178,10 +181,10 @@ namespace FichesJoueurs
                         Modification = false;
                     }
                     else
-                        MessageBox.Show("L'extension RTF doit etre utilise.", "Enregistrer sous du document", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurExtensionInvalide], "Enregistrer sous du document", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
@@ -212,5 +215,6 @@ namespace FichesJoueurs
         }
 
         #endregion
+        
     }
 }

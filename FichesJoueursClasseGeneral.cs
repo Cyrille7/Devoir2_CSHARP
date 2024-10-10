@@ -31,18 +31,20 @@ namespace FichesJoueurs
             CECreationNouveauEnfantErreur,
             CENumeroFormulaireInvalide,
             CEErreurGeneral,
-            CEErreurExtensionInvalide
+            CEErreurExtensionInvalide,
+            CEErreurFichierVide
         }
 
         #endregion
 
         #region Message d'erreurs
 
-        public static string[] tabMessagesErreursStr = new string[4];
+        public static string[] tabMessagesErreursStr = new string[5];
         public const string ErreurCreationEnfant = "Le fichier enfant n'as pu être crée.";
         public const string ErreurIndexEnfant = "Numero du formulaire enfant invalide.";
         public const string ErreurGeneral = "Une erreur c'est produite. Contactez le programmeur";
         public const string ErreurExtension = "Vous ne pouvez ouvrir que des fichiers portant l'extension .rtf avec  l'application FichesJoueurs";
+        public const string ErreurFichierVide = "Vous ne pouvez pas enregistrer des fichiers vides.";
 
         #endregion
 
@@ -55,6 +57,7 @@ namespace FichesJoueurs
             tabMessagesErreursStr[(int)ce.CENumeroFormulaireInvalide] = ErreurIndexEnfant;
             tabMessagesErreursStr[(int)ce.CEErreurGeneral] = ErreurGeneral;
             tabMessagesErreursStr[(int)ce.CEErreurExtensionInvalide] = ErreurExtension;
+            tabMessagesErreursStr[(int)ce.CEErreurFichierVide] = ErreurFichierVide;
         }
         #endregion
 
