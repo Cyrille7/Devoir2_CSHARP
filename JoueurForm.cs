@@ -31,6 +31,7 @@ namespace FichesJoueurs
         private bool modificationBool = false;
 
 
+
         #endregion
 
         #region Initialisation
@@ -275,12 +276,17 @@ namespace FichesJoueurs
             RichTextBox_SelectionChanged(null ,null);
         }
 
-        private void ChangerAttributsPolice(FontStyle style)
+        public void ChangerAttributsPolice(FontStyle style)
         {
+
             try
             {
+                if (infoRichTextBox.Font.FontFamily.IsStyleAvailable(style))
+                {
 
-
+                    infoRichTextBox.SelectionFont = new Font(infoRichTextBox.SelectionFont,
+                         infoRichTextBox.SelectionFont.Style | style);
+                }
 
             }
             catch
@@ -288,5 +294,6 @@ namespace FichesJoueurs
                 
             }
         }
+
     }
 }

@@ -29,6 +29,7 @@ namespace FichesJoueurs
         #region Variables
 
         private int nbClients = 1;
+        FontStyle oFontStyle;
 
         #endregion
 
@@ -42,6 +43,7 @@ namespace FichesJoueurs
         #region Chargement du formulaire
         private void FichesJoueursParent_Load(object sender, EventArgs e)
         {
+            oFontStyle = FontStyle.Regular;
             c.InitMessagesErreur();
             AssocierImages();
             fichesJoueursOpenFileDialog.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (*.*)| *.*";
@@ -178,6 +180,64 @@ namespace FichesJoueurs
                 MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
+
+        #endregion
+
+
+        #region Style et Police
+
+        private void StylePolice(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ActiveMdiChild != null)
+                {
+                    JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
+                    
+                    if (sender == grasToolStripButton)
+                    {
+
+                        if (grasToolStripButton.Checked)
+                        {
+                            oJoueur.ChangerAttributsPolice(FontStyle.Bold);
+                        }
+                        else
+                        {
+                            oJoueur.infoRichTextBox.SelectionFont = new Font(oJoueur.infoRichTextBox.SelectionFont,
+                               oJoueur.infoRichTextBox.SelectionFont.Style & ~FontStyle.Bold);
+                        }
+                    }
+                    else if(sender == italiqueToolStripButton)
+                    {
+                        if (italiqueToolStripButton.Checked)
+                        {
+                            oJoueur.ChangerAttributsPolice(FontStyle.Italic);
+                        }
+                        else
+                        {
+                            oJoueur.infoRichTextBox.SelectionFont = new Font(oJoueur.infoRichTextBox.SelectionFont,
+                               oJoueur.infoRichTextBox.SelectionFont.Style & ~FontStyle.Italic);
+                        }
+                    }
+                    else
+                    {
+                        oJoueur.ChangerAttributsPolice(FontStyle.Underline);
+
+                        if (soulignementToolStripButton.Checked)
+                        {
+                            oJoueur.ChangerAttributsPolice(FontStyle.Underline);
+                        }
+                        else
+                        {
+                            oJoueur.infoRichTextBox.SelectionFont = new Font(oJoueur.infoRichTextBox.SelectionFont,
+                               oJoueur.infoRichTextBox.SelectionFont.Style & ~FontStyle.Underline);
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+        
 
         #endregion
 
