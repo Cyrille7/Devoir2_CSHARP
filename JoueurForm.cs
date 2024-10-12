@@ -242,6 +242,8 @@ namespace FichesJoueurs
 
                 parent.copierToolStripMenuItem.Enabled = infoRichTextBox.SelectionLength > 0;
                 parent.copierToolStripButton.Enabled = infoRichTextBox.SelectionLength > 0;
+                parent.couperToolStripMenuItem.Enabled = infoRichTextBox.SelectionLength > 0;
+                parent.couperToolStripButton.Enabled = infoRichTextBox.SelectionLength > 0;
 
                 switch (infoRichTextBox.SelectionAlignment)
                 {
