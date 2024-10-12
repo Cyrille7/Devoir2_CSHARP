@@ -31,3 +31,14 @@ C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\obj\Debug\FichesJoueurs.
 C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
 C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
 C:\Users\alexa\Downloads\Devoir2 Phase C\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe.config
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\bin\Debug\FichesJoueurs.exe
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\bin\Debug\FichesJoueurs.pdb
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.AssemblyReference.cache
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.JoueurForm.resources
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.FichesJoueursParent.resources
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.Properties.Resources.resources
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.GenerateResource.cache
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.CoreCompileInputs.cache
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.exe
+C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.pdb

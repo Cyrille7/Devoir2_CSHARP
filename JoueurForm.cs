@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           10 Octobre 2024
-    But:            Devoir 2 (Phase C) - Fiche des joueurs
+    Date:           15 Octobre 2024
+    But:            Devoir 2 (Phase D) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -273,14 +273,17 @@ namespace FichesJoueurs
 
         #endregion
 
+        #region ClientActivated
         private void ClientActivated()
         {
             RichTextBox_SelectionChanged(null ,null);
         }
 
+        #endregion
+
+        #region ChangerAttributsPolice
         public void ChangerAttributsPolice(FontStyle style)
         {
-
             try
             {
                 if (infoRichTextBox.Font.FontFamily.IsStyleAvailable(style))
@@ -291,11 +294,13 @@ namespace FichesJoueurs
                 }
 
             }
-            catch
+            catch(Exception)
             {
-                
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
+
+        #endregion
 
     }
 }
