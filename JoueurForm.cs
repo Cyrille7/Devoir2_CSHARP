@@ -267,7 +267,7 @@ namespace FichesJoueurs
             }
             catch(Exception)
             {
-
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
 
