@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           10 Octobre 2024
-    But:            Devoir 2 (Phase C) - Fiche des joueurs
+    Date:           15 Octobre 2024
+    But:            Devoir 2 (Phase D) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -29,6 +29,7 @@ namespace FichesJoueurs
 
         private bool enregistrementBool = false;
         private bool modificationBool = false;
+
 
 
         #endregion
@@ -241,6 +242,8 @@ namespace FichesJoueurs
 
                 parent.copierToolStripMenuItem.Enabled = infoRichTextBox.SelectionLength > 0;
                 parent.copierToolStripButton.Enabled = infoRichTextBox.SelectionLength > 0;
+                parent.couperToolStripMenuItem.Enabled = infoRichTextBox.SelectionLength > 0;
+                parent.couperToolStripButton.Enabled = infoRichTextBox.SelectionLength > 0;
 
                 switch (infoRichTextBox.SelectionAlignment)
                 {
@@ -264,7 +267,7 @@ namespace FichesJoueurs
             }
             catch(Exception)
             {
-
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
 
@@ -278,18 +281,26 @@ namespace FichesJoueurs
 
         #endregion
 
-        private void ChangerAttributsPolice(FontStyle style)
+        #region ChangerAttributsPolice
+        public void ChangerAttributsPolice(FontStyle style)
         {
             try
             {
+                if (infoRichTextBox.Font.FontFamily.IsStyleAvailable(style))
+                {
 
-
+                    infoRichTextBox.SelectionFont = new Font(infoRichTextBox.SelectionFont,
+                         infoRichTextBox.SelectionFont.Style | style);
+                }
 
             }
-            catch
+            catch(Exception)
             {
-                
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
+
+        #endregion
+
     }
 }

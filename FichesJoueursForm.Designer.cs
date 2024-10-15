@@ -245,8 +245,9 @@
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.X)));
-            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.couperToolStripMenuItem.Text = "&Couper";
+            this.couperToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // copierToolStripMenuItem
             // 
@@ -255,8 +256,9 @@
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.copierToolStripMenuItem.Text = "Co&pier";
+            this.copierToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // collerToolStripMenuItem
             // 
@@ -265,37 +267,41 @@
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.V)));
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.collerToolStripMenuItem.Text = "Co&ller";
+            this.collerToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // septimemeToolStripSeparator
             // 
             this.septimemeToolStripSeparator.Name = "septimemeToolStripSeparator";
-            this.septimemeToolStripSeparator.Size = new System.Drawing.Size(183, 6);
+            this.septimemeToolStripSeparator.Size = new System.Drawing.Size(187, 6);
             // 
             // effacerToolStripMenuItem
             // 
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.effacerToolStripMenuItem.Text = "&Effacer";
+            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // selectionnerToolStripMenuItem
             // 
             this.selectionnerToolStripMenuItem.Name = "selectionnerToolStripMenuItem";
             this.selectionnerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+
+            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.selectionnerToolStripMenuItem.Text = "&Selectionner";
+            this.selectionnerToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // huitiemeToolStripSeparator
             // 
             this.huitiemeToolStripSeparator.Name = "huitiemeToolStripSeparator";
-            this.huitiemeToolStripSeparator.Size = new System.Drawing.Size(183, 6);
+            this.huitiemeToolStripSeparator.Size = new System.Drawing.Size(187, 6);
             // 
             // rechercherToolStripMenuItem
             // 
             this.rechercherToolStripMenuItem.Image = global::FichesJoueurs.Properties.Resources.search;
             this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.rechercherToolStripMenuItem.Text = "&Rechercher";
             // 
             // affichageToolStripMenuItem
@@ -470,7 +476,7 @@
             this.aideToolStripButton});
             this.fichesJoueursToolStrip.Location = new System.Drawing.Point(3, 27);
             this.fichesJoueursToolStrip.Name = "fichesJoueursToolStrip";
-            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(643, 27);
+            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(612, 27);
             this.fichesJoueursToolStrip.TabIndex = 6;
             this.fichesJoueursToolStrip.Text = "fichesJoueursToolStrip";
             // 
@@ -526,6 +532,7 @@
             this.couperToolStripButton.Name = "couperToolStripButton";
             this.couperToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.couperToolStripButton.Text = "C&ouper";
+            this.couperToolStripButton.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // copierToolStripButton
             // 
@@ -535,6 +542,7 @@
             this.copierToolStripButton.Name = "copierToolStripButton";
             this.copierToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.copierToolStripButton.Text = "Co&pier";
+            this.copierToolStripButton.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // collerToolStripButton
             // 
@@ -544,6 +552,7 @@
             this.collerToolStripButton.Name = "collerToolStripButton";
             this.collerToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.collerToolStripButton.Text = "Co&ller";
+            this.collerToolStripButton.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // deuxiemeToolStripSeparator
             // 
@@ -568,6 +577,7 @@
             this.grasToolStripButton.Name = "grasToolStripButton";
             this.grasToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.grasToolStripButton.Text = "Bold";
+            this.grasToolStripButton.Click += new System.EventHandler(this.StylePolice);
             // 
             // italiqueToolStripButton
             // 
@@ -577,6 +587,7 @@
             this.italiqueToolStripButton.Name = "italiqueToolStripButton";
             this.italiqueToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.italiqueToolStripButton.Text = "Italic";
+            this.italiqueToolStripButton.Click += new System.EventHandler(this.StylePolice);
             // 
             // soulignementToolStripButton
             // 
@@ -586,6 +597,7 @@
             this.soulignementToolStripButton.Name = "soulignementToolStripButton";
             this.soulignementToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.soulignementToolStripButton.Text = "Underline";
+            this.soulignementToolStripButton.Click += new System.EventHandler(this.StylePolice);
             // 
             // troisiemeToolStripSeparator
             // 
@@ -600,6 +612,7 @@
             this.gaucheAlignementToolStripButton.Name = "gaucheAlignementToolStripButton";
             this.gaucheAlignementToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.gaucheAlignementToolStripButton.Text = "Alignement gauche";
+            this.gaucheAlignementToolStripButton.Click += new System.EventHandler(this.Alignement_Click);
             // 
             // centreAlignementToolStripButton
             // 
@@ -609,6 +622,7 @@
             this.centreAlignementToolStripButton.Name = "centreAlignementToolStripButton";
             this.centreAlignementToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.centreAlignementToolStripButton.Text = "Alignement centré";
+            this.centreAlignementToolStripButton.Click += new System.EventHandler(this.Alignement_Click);
             // 
             // droiteAlignementToolStripButton
             // 
@@ -618,6 +632,7 @@
             this.droiteAlignementToolStripButton.Name = "droiteAlignementToolStripButton";
             this.droiteAlignementToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.droiteAlignementToolStripButton.Text = "Alignement droit";
+            this.droiteAlignementToolStripButton.Click += new System.EventHandler(this.Alignement_Click);
             // 
             // quatriemeToolStripSeparator
             // 
@@ -725,6 +740,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manipulation des Joueurs";
             this.Load += new System.EventHandler(this.FichesJoueursParent_Load);
+            this.MdiChildActivate += new System.EventHandler(this.FichesJoueursParent_MdiChildActivate);
             this.hautToolStripPanel.ResumeLayout(false);
             this.hautToolStripPanel.PerformLayout();
             this.fichesJoueursMenuStrip.ResumeLayout(false);

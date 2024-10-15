@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           10 Octobre 2024
-    But:            Devoir 2 (Phase C) - Fiche des joueurs
+    Date:           15 Octobre 2024
+    But:            Devoir 2 (Phase D) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -19,7 +19,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using c = FichesJoueurs.FichesJoueursClasseGeneral;
 
 namespace FichesJoueurs
@@ -29,6 +29,7 @@ namespace FichesJoueurs
         #region Variables
 
         private int nbClients = 1;
+        FontStyle oFontStyle;
 
         #endregion
 
@@ -42,6 +43,7 @@ namespace FichesJoueurs
         #region Chargement du formulaire
         private void FichesJoueursParent_Load(object sender, EventArgs e)
         {
+            oFontStyle = FontStyle.Regular;
             c.InitMessagesErreur();
             AssocierImages();
             fichesJoueursOpenFileDialog.Filter = "Fichier rtf (*.rtf) |*.RTF|Tous les fichiers (*.*)| *.*";
@@ -50,6 +52,8 @@ namespace FichesJoueurs
             fichesJoueursOpenFileDialog.AddExtension = true;
             fichesJoueursOpenFileDialog.CheckFileExists = true;
             fichesJoueursOpenFileDialog.CheckPathExists = true;
+
+            DesactiverOperationsMenusBarreOutils();
         }
 
         #endregion
@@ -89,13 +93,15 @@ namespace FichesJoueurs
         {
             try
             {
+                
                 JoueurForm oJoueur = new JoueurForm();
                 oJoueur.MdiParent = this;
                 oJoueur.Text += " " + (nbClients).ToString();
                 oJoueur.Show();
                 nbClients++;
+                ActiverOperationsMenusBarreOutils();
             }
-            catch(IndexOutOfRangeException)
+            catch (IndexOutOfRangeException)
             {
                 MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CENumeroFormulaireInvalide]);
             }
@@ -165,12 +171,12 @@ namespace FichesJoueurs
             {
                 if (this.ActiveMdiChild != null)
                 {
-                JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
+                    JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
 
-                if (sender == enregistrersousToolStripMenuItem)
-                    oJoueur.EnregistrerSous();
-                else
-                    oJoueur.Enregistrer();
+                    if (sender == enregistrersousToolStripMenuItem)
+                        oJoueur.EnregistrerSous();
+                    else
+                        oJoueur.Enregistrer();
                 }
             }
             catch (Exception)
@@ -178,6 +184,66 @@ namespace FichesJoueurs
                 MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
+
+        #endregion
+
+        #region Style et Police
+
+        private void StylePolice(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ActiveMdiChild != null)
+                {
+                    JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
+                    
+                    if (sender == grasToolStripButton)
+                    {
+
+                        if (grasToolStripButton.Checked)
+                        {
+                            oJoueur.ChangerAttributsPolice(FontStyle.Bold);
+                        }
+                        else
+                        {
+                            oJoueur.infoRichTextBox.SelectionFont = new Font(oJoueur.infoRichTextBox.SelectionFont,
+                               oJoueur.infoRichTextBox.SelectionFont.Style & ~FontStyle.Bold);
+                        }
+                    }
+                    else if(sender == italiqueToolStripButton)
+                    {
+                        if (italiqueToolStripButton.Checked)
+                        {
+                            oJoueur.ChangerAttributsPolice(FontStyle.Italic);
+                        }
+                        else
+                        {
+                            oJoueur.infoRichTextBox.SelectionFont = new Font(oJoueur.infoRichTextBox.SelectionFont,
+                               oJoueur.infoRichTextBox.SelectionFont.Style & ~FontStyle.Italic);
+                        }
+                    }
+                    else
+                    {
+                        oJoueur.ChangerAttributsPolice(FontStyle.Underline);
+
+                        if (soulignementToolStripButton.Checked)
+                        {
+                            oJoueur.ChangerAttributsPolice(FontStyle.Underline);
+                        }
+                        else
+                        {
+                            oJoueur.infoRichTextBox.SelectionFont = new Font(oJoueur.infoRichTextBox.SelectionFont,
+                               oJoueur.infoRichTextBox.SelectionFont.Style & ~FontStyle.Underline);
+                        }
+                    }
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+        }
+        
 
         #endregion
 
@@ -214,6 +280,7 @@ namespace FichesJoueurs
                         oJoueur.Modification = false;
 
                         oJoueur.Show();
+                        ActiverOperationsMenusBarreOutils();
                     }
                     else
                         MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurExtensionInvalide], "Ouvrir", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -246,6 +313,173 @@ namespace FichesJoueurs
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        #endregion
+
+        #region DesactiverOperationsMenusBarreOutils
+
+        private void DesactiverOperationsMenusBarreOutils()
+        {
+            foreach (ToolStripItem oMainToolStripItem in fichesJoueursMenuStrip.Items)
+            {
+                if (oMainToolStripItem is ToolStripMenuItem oMainMenuItem)
+                {
+                    foreach (ToolStripItem oCourantToolStripItem in oMainMenuItem.DropDownItems)
+                    {
+                        if (oCourantToolStripItem is ToolStripMenuItem)
+                        {
+                            oCourantToolStripItem.Enabled = false;
+                        }
+                    }
+                }
+            }
+
+            quitterToolStripMenuItem.Enabled = true;
+            nouveauToolStripMenuItem.Enabled = true;
+            ouvrirToolStripMenuItem.Enabled = true;
+            aideSurListeJoueursToolStripMenuItem.Enabled = true;
+
+            foreach (ToolStripItem boutonToolStripItem in fichesJoueursToolStrip.Items)
+            {
+                boutonToolStripItem.Enabled = false;
+            }
+
+            nouveauToolStripButton.Enabled = true;
+            ouvrirToolStripButton.Enabled = true;
+
+        }
+
+        #endregion
+
+        #region ActiverOperationsMenusBarreOutils
+
+        private void ActiverOperationsMenusBarreOutils()
+        {
+            foreach (ToolStripItem oMainToolStripItem in fichesJoueursMenuStrip.Items)
+            {
+                if (oMainToolStripItem is ToolStripMenuItem oMainMenuItem)
+                {
+                    foreach (ToolStripItem oCourantToolStripItem in oMainMenuItem.DropDownItems)
+                    {
+                        if (oCourantToolStripItem is ToolStripMenuItem)
+                        {
+                            oCourantToolStripItem.Enabled = true;
+                        }
+                    }
+                }
+            }
+
+            foreach (ToolStripItem boutonToolStripItem in fichesJoueursToolStrip.Items)
+            {
+                boutonToolStripItem.Enabled = true;
+            }
+
+            //Désactiver les boutons appropriés : A FAIRE !!!!!!!
+
+            couperToolStripButton.Enabled = false;
+            couperToolStripMenuItem.Enabled = false;
+            copierToolStripButton.Enabled = false;
+            copierToolStripMenuItem.Enabled = false;
+            collerToolStripButton.Enabled = false;
+            collerToolStripMenuItem.Enabled = false;
+
+            if (Clipboard.ContainsText() || Clipboard.ContainsImage())
+            {
+                collerToolStripButton.Enabled = true;
+                collerToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        #endregion
+
+        #region Alignement
+
+        private void Alignement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.ActiveMdiChild != null)
+                {
+                    if(this.ActiveMdiChild is JoueurForm joueurForm)
+                    {
+                        if (sender == gaucheAlignementToolStripButton)
+                        {
+                            joueurForm.infoRichTextBox.SelectionAlignment = HorizontalAlignment.Left;
+                            centreAlignementToolStripButton.Checked = false;
+                            droiteAlignementToolStripButton.Checked = false;
+                        }
+                        else if (sender == centreAlignementToolStripButton)
+                        {
+                            joueurForm.infoRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
+                            gaucheAlignementToolStripButton.Checked = false;
+                            droiteAlignementToolStripButton.Checked = false;
+
+                        }
+                        else
+                        {
+                            joueurForm.infoRichTextBox.SelectionAlignment = HorizontalAlignment.Right;
+                            centreAlignementToolStripButton.Checked = false;
+                            gaucheAlignementToolStripButton.Checked = false;
+                        }
+                    }
+                }  
+            }
+            catch(Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+        }
+
+        #endregion
+
+        #region MdiChildActivate
+        private void FichesJoueursParent_MdiChildActivate(object sender, EventArgs e)
+        {
+            if(ActiveMdiChild == null)
+            {
+                DesactiverOperationsMenusBarreOutils();
+            }
+        }
+
+        #endregion
+
+        #region Edition
+        private void EditionTexte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ActiveMdiChild != null)
+                {
+                    if(this.ActiveMdiChild is JoueurForm joueurForm)
+                    {
+                        if (sender == copierToolStripMenuItem || sender == copierToolStripButton)
+                        {
+                            joueurForm.infoRichTextBox.Copy();
+                        }
+                        else if (sender == collerToolStripMenuItem || sender == collerToolStripButton)
+                        {
+                            joueurForm.infoRichTextBox.Paste();
+                        }
+                        else if (sender == couperToolStripMenuItem || sender == couperToolStripButton)
+                        {
+                            joueurForm.infoRichTextBox.Cut();
+                        }
+                        else if (sender == selectionnerToolStripMenuItem)
+                        {
+                            joueurForm.infoRichTextBox.SelectAll();
+                        }
+                        else
+                        {
+                            joueurForm.infoRichTextBox.Clear();
+                        }
+                    }      
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
         }
 
         #endregion
