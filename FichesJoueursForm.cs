@@ -373,6 +373,8 @@ namespace FichesJoueurs
                 boutonToolStripItem.Enabled = true;
             }
 
+            //On desactive les boutons appropries
+
             couperToolStripButton.Enabled = false;
             couperToolStripMenuItem.Enabled = false;
             copierToolStripButton.Enabled = false;
