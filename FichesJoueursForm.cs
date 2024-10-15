@@ -189,7 +189,7 @@ namespace FichesJoueurs
 
         #region Style et Police
 
-        private void StylePolice(object sender, EventArgs e)
+        private void StylePolice_Click(object sender, EventArgs e)
         {
             try
             {
@@ -224,8 +224,6 @@ namespace FichesJoueurs
                     }
                     else
                     {
-                        oJoueur.ChangerAttributsPolice(FontStyle.Underline);
-
                         if (soulignementToolStripButton.Checked)
                         {
                             oJoueur.ChangerAttributsPolice(FontStyle.Underline);
@@ -374,8 +372,6 @@ namespace FichesJoueurs
             {
                 boutonToolStripItem.Enabled = true;
             }
-
-            //Désactiver les boutons appropriés : A FAIRE !!!!!!!
 
             couperToolStripButton.Enabled = false;
             couperToolStripMenuItem.Enabled = false;

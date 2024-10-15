@@ -577,7 +577,7 @@
             this.grasToolStripButton.Name = "grasToolStripButton";
             this.grasToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.grasToolStripButton.Text = "Bold";
-            this.grasToolStripButton.Click += new System.EventHandler(this.StylePolice);
+            this.grasToolStripButton.Click += new System.EventHandler(this.StylePolice_Click);
             // 
             // italiqueToolStripButton
             // 
@@ -587,7 +587,7 @@
             this.italiqueToolStripButton.Name = "italiqueToolStripButton";
             this.italiqueToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.italiqueToolStripButton.Text = "Italic";
-            this.italiqueToolStripButton.Click += new System.EventHandler(this.StylePolice);
+            this.italiqueToolStripButton.Click += new System.EventHandler(this.StylePolice_Click);
             // 
             // soulignementToolStripButton
             // 
@@ -597,7 +597,7 @@
             this.soulignementToolStripButton.Name = "soulignementToolStripButton";
             this.soulignementToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.soulignementToolStripButton.Text = "Underline";
-            this.soulignementToolStripButton.Click += new System.EventHandler(this.StylePolice);
+            this.soulignementToolStripButton.Click += new System.EventHandler(this.StylePolice_Click);
             // 
             // troisiemeToolStripSeparator
             // 
