@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           15 Octobre 2024
-    But:            Devoir 2 (Phase D) - Fiche des joueurs
+    Date:           18 Octobre 2024
+    But:            Devoir 2 (Phase E) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -29,6 +29,7 @@ namespace FichesJoueurs
 
         private bool enregistrementBool = false;
         private bool modificationBool = false;
+        private bool modeInsertionBool = false;
 
 
 
@@ -69,7 +70,17 @@ namespace FichesJoueurs
             }
         }
 
-
+        public bool ModeInsertion
+        {
+            get
+            {
+                return modeInsertionBool;
+            }
+            set
+            {
+                modeInsertionBool = value;
+            }
+        }
 
         #endregion
 
@@ -274,9 +285,9 @@ namespace FichesJoueurs
         #endregion
 
         #region ClientActivated
-        private void ClientActivated()
+        private void JoueurForm_Activated(object sender, EventArgs e)
         {
-            RichTextBox_SelectionChanged(null ,null);
+            RichTextBox_SelectionChanged(null, null);
         }
 
         #endregion
@@ -301,6 +312,5 @@ namespace FichesJoueurs
         }
 
         #endregion
-
     }
 }

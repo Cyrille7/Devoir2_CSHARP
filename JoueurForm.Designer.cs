@@ -124,6 +124,7 @@
             this.Controls.Add(this.nomLabel);
             this.Name = "JoueurForm";
             this.Text = "Joueur";
+            this.Activated += new System.EventHandler(this.JoueurForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Joueur_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

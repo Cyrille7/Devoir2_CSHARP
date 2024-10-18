@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           15 Octobre 2024
-    But:            Devoir 2 (Phase D) - Fiche des joueurs
+    Date:           18 Octobre 2024
+    But:            Devoir 2 (Phase E) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -54,6 +55,14 @@ namespace FichesJoueurs
             fichesJoueursOpenFileDialog.CheckPathExists = true;
 
             DesactiverOperationsMenusBarreOutils();
+
+            languageToolStripStatusLabel.Text = CultureInfo.CurrentCulture.NativeName;
+
+            if (System.Console.CapsLock)
+            {
+                capsLockToolStripStatusLabel.Text = "MAJ";
+            }
+
         }
 
         #endregion
@@ -96,10 +105,13 @@ namespace FichesJoueurs
                 
                 JoueurForm oJoueur = new JoueurForm();
                 oJoueur.MdiParent = this;
+                oJoueur.ModeInsertion = true;
                 oJoueur.Text += " " + (nbClients).ToString();
                 oJoueur.Show();
                 nbClients++;
                 ActiverOperationsMenusBarreOutils();
+                
+                
             }
             catch (IndexOutOfRangeException)
             {
@@ -177,6 +189,8 @@ namespace FichesJoueurs
                         oJoueur.EnregistrerSous();
                     else
                         oJoueur.Enregistrer();
+
+                    creerOuvrirJoueurToolStripStatusLabel.Text = oJoueur.Text;
                 }
             }
             catch (Exception)
@@ -257,6 +271,7 @@ namespace FichesJoueurs
                     {
                         JoueurForm oJoueur = new JoueurForm();
                         oJoueur.MdiParent = this;
+                        oJoueur.ModeInsertion = true;
                         oJoueur.Text = fichesJoueursOpenFileDialog.FileName;
 
                         RichTextBox ortf = new RichTextBox();
@@ -437,6 +452,24 @@ namespace FichesJoueurs
             if(ActiveMdiChild == null)
             {
                 DesactiverOperationsMenusBarreOutils();
+
+                creerOuvrirJoueurToolStripStatusLabel.Text = "Créer un nouveau formulaire enfant...";
+                insertToolStripStatusLabel.Text = string.Empty;
+            }
+            else 
+            {
+                JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
+
+                if (oJoueur.ModeInsertion)
+                {
+                    insertToolStripStatusLabel.Text = "INS";
+                }
+                else
+                {
+                    insertToolStripStatusLabel.Text = "RFP";
+                }
+
+                creerOuvrirJoueurToolStripStatusLabel.Text = oJoueur.Text;
             }
         }
 
@@ -477,6 +510,46 @@ namespace FichesJoueurs
             catch(Exception)
             {
                 MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+        }
+
+
+        #endregion
+
+        #region KeyDown
+        private void FichesJoueursParent_KeyDown(object sender, KeyEventArgs e)
+        {
+            JoueurForm oJoueur = this.ActiveMdiChild as JoueurForm;
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                capsLockToolStripStatusLabel.Text = "MAJ";
+            }
+            else
+            {
+                capsLockToolStripStatusLabel.Text = string.Empty;
+            }
+
+            if (e.KeyCode == Keys.Insert)
+            {
+                if (insertToolStripStatusLabel.Text == "INS")
+                {
+                    insertToolStripStatusLabel.Text = "RFP";
+
+                    if (this.ActiveMdiChild != null)
+                    {
+                        oJoueur.ModeInsertion = false;
+                    }
+                }
+                else
+                {
+                    insertToolStripStatusLabel.Text = "INS";
+
+                    if (this.ActiveMdiChild != null)
+                    {
+                        oJoueur.ModeInsertion = true;
+                    }
+                }
             }
         }
 
