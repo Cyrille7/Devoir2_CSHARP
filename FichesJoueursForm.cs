@@ -388,7 +388,7 @@ namespace FichesJoueurs
                 boutonToolStripItem.Enabled = true;
             }
 
-            //On desactive les boutons appropries
+            //Désactiver les boutons appropriés : A FAIRE !!!!!!!
 
             couperToolStripButton.Enabled = false;
             couperToolStripMenuItem.Enabled = false;
