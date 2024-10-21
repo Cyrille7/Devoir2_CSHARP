@@ -236,9 +236,6 @@ namespace FichesJoueurs
             {
                 FichesJoueursParent parent = (FichesJoueursParent)this.MdiParent;
          
-                parent.grasToolStripButton.Checked = infoRichTextBox.SelectionFont.Bold;
-                parent.italiqueToolStripButton.Checked = infoRichTextBox.SelectionFont.Italic;
-                parent.soulignementToolStripButton.Checked = infoRichTextBox.SelectionFont.Underline;
                 
                 if (Clipboard.ContainsText() || Clipboard.ContainsImage())
                 {
@@ -277,6 +274,17 @@ namespace FichesJoueurs
 
 
                 //Changement a faire dans selectionChanged
+               if(infoRichTextBox.SelectionFont != null)
+                {
+                    parent.policesListBox.Visible = false;
+
+                    parent.policeToolStripComboBox.Text = infoRichTextBox.SelectionFont.Name;
+                    parent.tailleToolStripComboBox.Text = infoRichTextBox.SelectionFont.Size.ToString();
+
+                    parent.grasToolStripButton.Checked = infoRichTextBox.SelectionFont.Bold;
+                    parent.italiqueToolStripButton.Checked = infoRichTextBox.SelectionFont.Italic;
+                    parent.soulignementToolStripButton.Checked = infoRichTextBox.SelectionFont.Underline;
+                }
             }
             catch(Exception)
             {
@@ -315,12 +323,5 @@ namespace FichesJoueurs
 
         #endregion
 
-        #region SelectionChanged
-
-
-
-
-
-        #endregion
     }
 }

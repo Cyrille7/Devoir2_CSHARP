@@ -99,6 +99,7 @@
             this.droitToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.fichesJoueursOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.fichesJoueursFontDialog = new System.Windows.Forms.FontDialog();
+            this.policesListBox = new System.Windows.Forms.ListBox();
             this.hautToolStripPanel.SuspendLayout();
             this.fichesJoueursMenuStrip.SuspendLayout();
             this.fichesJoueursToolStrip.SuspendLayout();
@@ -246,7 +247,7 @@
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.X)));
-            this.couperToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.couperToolStripMenuItem.Text = "&Couper";
             this.couperToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
@@ -257,7 +258,7 @@
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.copierToolStripMenuItem.Text = "Co&pier";
             this.copierToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
@@ -268,19 +269,19 @@
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.V)));
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.collerToolStripMenuItem.Text = "Co&ller";
             this.collerToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // septimemeToolStripSeparator
             // 
             this.septimemeToolStripSeparator.Name = "septimemeToolStripSeparator";
-            this.septimemeToolStripSeparator.Size = new System.Drawing.Size(179, 6);
+            this.septimemeToolStripSeparator.Size = new System.Drawing.Size(183, 6);
             // 
             // effacerToolStripMenuItem
             // 
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
-            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.effacerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.effacerToolStripMenuItem.Text = "&Effacer";
             this.effacerToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
@@ -288,20 +289,20 @@
             // 
             this.selectionnerToolStripMenuItem.Name = "selectionnerToolStripMenuItem";
             this.selectionnerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.selectionnerToolStripMenuItem.Text = "&Selectionner";
             this.selectionnerToolStripMenuItem.Click += new System.EventHandler(this.EditionTexte_Click);
             // 
             // huitiemeToolStripSeparator
             // 
             this.huitiemeToolStripSeparator.Name = "huitiemeToolStripSeparator";
-            this.huitiemeToolStripSeparator.Size = new System.Drawing.Size(179, 6);
+            this.huitiemeToolStripSeparator.Size = new System.Drawing.Size(183, 6);
             // 
             // rechercherToolStripMenuItem
             // 
             this.rechercherToolStripMenuItem.Image = global::FichesJoueurs.Properties.Resources.search;
             this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.rechercherToolStripMenuItem.Text = "&Rechercher";
             // 
             // affichageToolStripMenuItem
@@ -477,7 +478,7 @@
             this.aideToolStripButton});
             this.fichesJoueursToolStrip.Location = new System.Drawing.Point(3, 27);
             this.fichesJoueursToolStrip.Name = "fichesJoueursToolStrip";
-            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(643, 27);
+            this.fichesJoueursToolStrip.Size = new System.Drawing.Size(612, 27);
             this.fichesJoueursToolStrip.TabIndex = 6;
             this.fichesJoueursToolStrip.Text = "fichesJoueursToolStrip";
             // 
@@ -735,11 +736,22 @@
             // 
             this.fichesJoueursOpenFileDialog.FileName = "openFileDialog1";
             // 
+            // policesListBox
+            // 
+            this.policesListBox.FormattingEnabled = true;
+            this.policesListBox.Location = new System.Drawing.Point(188, 57);
+            this.policesListBox.Name = "policesListBox";
+            this.policesListBox.Size = new System.Drawing.Size(120, 95);
+            this.policesListBox.TabIndex = 5;
+            this.policesListBox.Visible = false;
+            this.policesListBox.Click += new System.EventHandler(this.policesListBox_Click);
+            // 
             // FichesJoueursParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 572);
+            this.Controls.Add(this.policesListBox);
             this.Controls.Add(this.hautToolStripPanel);
             this.Controls.Add(this.droitToolStripPanel);
             this.Controls.Add(this.gaucheToolStripPanel);
@@ -841,6 +853,7 @@
         internal System.Windows.Forms.ToolStripComboBox policeToolStripComboBox;
         internal System.Windows.Forms.ToolStripComboBox tailleToolStripComboBox;
         private System.Windows.Forms.FontDialog fichesJoueursFontDialog;
+        internal System.Windows.Forms.ListBox policesListBox;
     }
 }
 

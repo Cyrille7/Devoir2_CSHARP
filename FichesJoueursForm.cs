@@ -115,7 +115,6 @@ namespace FichesJoueurs
         {
             try
             {
-                
                 JoueurForm oJoueur = new JoueurForm();
                 oJoueur.MdiParent = this;
                 oJoueur.ModeInsertion = true;
@@ -123,6 +122,7 @@ namespace FichesJoueurs
                 oJoueur.Show();
                 nbClients++;
                 ActiverOperationsMenusBarreOutils();
+                policesListBox.Visible = false;
                 
                 
             }
@@ -582,8 +582,6 @@ namespace FichesJoueurs
                     policeToolStripComboBox.Items.Add(oFamily.Name);
                 }
 
-                // L'usager peut faire une recherche incrémentielle du nom d'une famille de police.
-
                 
             }
             catch (Exception)
@@ -627,15 +625,14 @@ namespace FichesJoueurs
                 JoueurForm oJoueurForm = (JoueurForm)this.ActiveMdiChild;
                 Font enfantRichTextBoxFont = oJoueurForm.infoRichTextBox.SelectionFont;
 
-                if (enfantRichTextBoxFont != null)
-                {
-                   
-                    string policeSelectionnee = (string)policeToolStripComboBox.SelectedItem;
-                    oJoueurForm.infoRichTextBox.SelectionFont = new Font(policeSelectionnee, enfantRichTextBoxFont.Size, enfantRichTextBoxFont.Style);
+        
+                string policeSelectionnee = (string)policeToolStripComboBox.SelectedItem;
+                oJoueurForm.infoRichTextBox.SelectionFont = new Font(policeSelectionnee, enfantRichTextBoxFont.Size, enfantRichTextBoxFont.Style);
 
-            
-                    oJoueurForm.infoRichTextBox.Focus();
-                }
+
+                oJoueurForm.infoRichTextBox.Focus();
+
+
             }
             catch(Exception)
             {
@@ -677,23 +674,32 @@ namespace FichesJoueurs
         private void policeToolStripComboBox_TextChanged(object sender, EventArgs e)
         {
 
+            InstalledFontCollection oInstalledFonts = new InstalledFontCollection();
+
             String pattern = "";
             pattern = policeToolStripComboBox.Text.ToString();
 
-           // string police = ((policeToolStripComboBox)sender).Text;
+            policesListBox.Visible = true;
 
-            RichTextBox richTextBox = new RichTextBox();
-
-            richTextBox.Text = pattern;
-
-            MessageBox.Show(pattern);
+            policesListBox.Items.Clear();
 
 
-            //foreach (FontFamily oFamily in oInstalledFonts.Families)
-            //{
+            foreach (FontFamily oFamily in oInstalledFonts.Families)
+            {
+                if (oFamily.Name.ToString().ToLower().StartsWith(pattern.ToLower()))
+                {
+                    policesListBox.Items.Add(oFamily.Name);
+                }
 
-            //}
+            }
 
+        }
+
+        private void policesListBox_Click(object sender, EventArgs e)
+        {
+            policeToolStripComboBox.Text = policesListBox.SelectedItem.ToString();
+
+            policesListBox.Visible = false;
         }
     }
 }
