@@ -275,6 +275,8 @@ namespace FichesJoueurs
                         break;
                 }
 
+
+                //Changement a faire dans selectionChanged
             }
             catch(Exception)
             {
@@ -310,6 +312,14 @@ namespace FichesJoueurs
                 MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
             }
         }
+
+        #endregion
+
+        #region SelectionChanged
+
+
+
+
 
         #endregion
     }

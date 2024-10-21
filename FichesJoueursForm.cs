@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
@@ -62,6 +63,18 @@ namespace FichesJoueurs
             {
                 capsLockToolStripStatusLabel.Text = "MAJ";
             }
+
+            policeToolStripComboBox.SelectedIndexChanged -= policeToolStripComboBox_SelectedIndexChanged;
+            tailleToolStripComboBox.SelectedIndexChanged -= tailleToolStripComboBox_SelectedIndexChanged;
+
+            InitPolice();
+
+            policeToolStripComboBox.SelectedIndexChanged += policeToolStripComboBox_SelectedIndexChanged;
+            tailleToolStripComboBox.SelectedIndexChanged += tailleToolStripComboBox_SelectedIndexChanged;
+
+
+            fichesJoueursFontDialog.MaxSize = 16;
+            fichesJoueursFontDialog.MinSize = 8;
 
         }
 
@@ -162,13 +175,13 @@ namespace FichesJoueurs
             {
                 if (sender == droitToolStripPanel || sender == gaucheToolStripPanel)
                 {
-                    premierToolStripComboBox.Visible = false;
-                    deuxiemeToolStripComboBox.Visible = false;
+                    policeToolStripComboBox.Visible = false;
+                    tailleToolStripComboBox.Visible = false;
                 }
                 else
                 {
-                    premierToolStripComboBox.Visible = true;
-                    deuxiemeToolStripComboBox.Visible = true;
+                    policeToolStripComboBox.Visible = true;
+                    tailleToolStripComboBox.Visible = true;
                 }
             }
         }
@@ -554,5 +567,133 @@ namespace FichesJoueurs
         }
 
         #endregion
+
+        #region Initialisation Police
+
+        private void InitPolice()
+        {
+            try
+            {
+                InstalledFontCollection oInstalledFonts = new InstalledFontCollection();
+
+
+                foreach (FontFamily oFamily in oInstalledFonts.Families)
+                {
+                    policeToolStripComboBox.Items.Add(oFamily.Name);
+                }
+
+                // L'usager peut faire une recherche incrémentielle du nom d'une famille de police.
+
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+
+        }
+
+        #endregion
+
+        #region Format Police
+        private void policeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JoueurForm oJoueur = this.ActiveMdiChild as JoueurForm;
+
+                fichesJoueursFontDialog.ShowEffects = true;
+                fichesJoueursFontDialog.Font = oJoueur.infoRichTextBox.Font;
+
+                if (fichesJoueursFontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    oJoueur.infoRichTextBox.Font = fichesJoueursFontDialog.Font;  
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+
+            }
+        }
+
+        #endregion
+
+        #region Police SelectedIndexChanged
+        private void policeToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                JoueurForm oJoueurForm = (JoueurForm)this.ActiveMdiChild;
+                Font enfantRichTextBoxFont = oJoueurForm.infoRichTextBox.SelectionFont;
+
+                if (enfantRichTextBoxFont != null)
+                {
+                   
+                    string policeSelectionnee = (string)policeToolStripComboBox.SelectedItem;
+                    oJoueurForm.infoRichTextBox.SelectionFont = new Font(policeSelectionnee, enfantRichTextBoxFont.Size, enfantRichTextBoxFont.Style);
+
+            
+                    oJoueurForm.infoRichTextBox.Focus();
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+        }
+
+        #endregion
+
+        #region Taille SelectedIndexChanged
+        private void tailleToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                JoueurForm ojoueurForm = (JoueurForm)this.ActiveMdiChild;
+                Font enfantRichTextBoxFont = ojoueurForm.infoRichTextBox.SelectionFont;
+
+                if (enfantRichTextBoxFont != null)
+                {
+
+                    float tailleSelectionnee = float.Parse((string)tailleToolStripComboBox.SelectedItem);
+                    ojoueurForm.infoRichTextBox.SelectionFont = new Font(enfantRichTextBoxFont.FontFamily, tailleSelectionnee, enfantRichTextBoxFont.Style);
+
+           
+                    ojoueurForm.infoRichTextBox.Focus();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CEErreurGeneral]);
+            }
+        }
+
+
+
+
+        #endregion
+
+        private void policeToolStripComboBox_TextChanged(object sender, EventArgs e)
+        {
+
+            String pattern = "";
+            pattern = policeToolStripComboBox.Text.ToString();
+
+           // string police = ((policeToolStripComboBox)sender).Text;
+
+            RichTextBox richTextBox = new RichTextBox();
+
+            richTextBox.Text = pattern;
+
+            MessageBox.Show(pattern);
+
+
+            foreach (FontFamily oFamily in oInstalledFonts.Families)
+            {
+
+            }
+
+        }
     }
 }
