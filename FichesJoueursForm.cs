@@ -576,12 +576,15 @@ namespace FichesJoueurs
             {
                 InstalledFontCollection oInstalledFonts = new InstalledFontCollection();
 
+
                 foreach (FontFamily oFamily in oInstalledFonts.Families)
                 {
                     policeToolStripComboBox.Items.Add(oFamily.Name);
                 }
 
                 // L'usager peut faire une recherche incrémentielle du nom d'une famille de police.
+
+                
             }
             catch (Exception)
             {
@@ -667,8 +670,30 @@ namespace FichesJoueurs
         }
 
 
+
+
         #endregion
 
-      
+        private void policeToolStripComboBox_TextChanged(object sender, EventArgs e)
+        {
+
+            String pattern = "";
+            pattern = policeToolStripComboBox.Text.ToString();
+
+           // string police = ((policeToolStripComboBox)sender).Text;
+
+            RichTextBox richTextBox = new RichTextBox();
+
+            richTextBox.Text = pattern;
+
+            MessageBox.Show(pattern);
+
+
+            foreach (FontFamily oFamily in oInstalledFonts.Families)
+            {
+
+            }
+
+        }
     }
 }
