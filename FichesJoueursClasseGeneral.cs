@@ -1,9 +1,9 @@
 ﻿/*
 
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           18 Octobre 2024
+    Date:           22 Octobre 2024
 
-    But:            Devoir 2 (Phase E) - Fiche des joueurs
+    But:            Devoir 2 (Phase F) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln

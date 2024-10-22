@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           18 Octobre 2024
-    But:            Devoir 2 (Phase E) - Fiche des joueurs
+    Date:           22 Octobre 2024
+    But:            Devoir 2 (Phase F) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Globalization;
 using System.Linq;
@@ -582,7 +583,20 @@ namespace FichesJoueurs
                     policeToolStripComboBox.Items.Add(oFamily.Name);
                 }
 
-                
+
+                //for (int i = 0; i < oInstalledFonts.Families.Length; i++)
+                //{
+                //    Font newFont = new Font(oInstalledFonts.Families[i], 12, FontStyle.Regular);
+
+                //    TextBox oTextBox = new TextBox();
+                //    oTextBox.Font = newFont;
+                //    oTextBox.Text = oInstalledFonts.Families[i].Name;
+                //    policeToolStripComboBox.Items.Add(oTextBox.Text);
+                //    policeToolStripComboBox.Font = newFont;
+                //    Console.WriteLine(policeToolStripComboBox.Font);
+                //}
+
+
             }
             catch (Exception)
             {
@@ -627,10 +641,16 @@ namespace FichesJoueurs
 
         
                 string policeSelectionnee = (string)policeToolStripComboBox.SelectedItem;
-                oJoueurForm.infoRichTextBox.SelectionFont = new Font(policeSelectionnee, enfantRichTextBoxFont.Size, enfantRichTextBoxFont.Style);
+
+                if(enfantRichTextBoxFont != null)
+                    oJoueurForm.infoRichTextBox.SelectionFont = new Font(policeSelectionnee, enfantRichTextBoxFont.Size, enfantRichTextBoxFont.Style);
+                else
+                    oJoueurForm.infoRichTextBox.SelectionFont = new Font(policeSelectionnee, float.Parse(tailleToolStripComboBox.Text), FontStyle.Regular);
+
 
 
                 oJoueurForm.infoRichTextBox.Focus();
+                policesListBox.Visible = false;
 
 
             }
@@ -671,35 +691,48 @@ namespace FichesJoueurs
 
         #endregion
 
+        #region Police ToolStripComboBox_TextChanged
         private void policeToolStripComboBox_TextChanged(object sender, EventArgs e)
         {
+            JoueurForm ojoueurForm = (JoueurForm)this.ActiveMdiChild;
 
-            InstalledFontCollection oInstalledFonts = new InstalledFontCollection();
-
-            String pattern = "";
-            pattern = policeToolStripComboBox.Text.ToString();
-
-            policesListBox.Visible = true;
-
-            policesListBox.Items.Clear();
-
-
-            foreach (FontFamily oFamily in oInstalledFonts.Families)
+            if (policeToolStripComboBox.Focused)
             {
-                if (oFamily.Name.ToString().ToLower().StartsWith(pattern.ToLower()))
+                InstalledFontCollection oInstalledFonts = new InstalledFontCollection();
+
+                String pattern = "";
+                pattern = policeToolStripComboBox.Text.ToString();
+
+                policesListBox.Visible = true;
+
+                policesListBox.Items.Clear();
+
+
+                foreach (FontFamily oFamily in oInstalledFonts.Families)
                 {
-                    policesListBox.Items.Add(oFamily.Name);
+                    if (oFamily.Name.ToLower().StartsWith(pattern.ToLower()))
+                    {
+                        policesListBox.Items.Add(oFamily.Name);
+                    }
+
                 }
 
             }
 
         }
 
-        private void policesListBox_Click(object sender, EventArgs e)
-        {
-            policeToolStripComboBox.Text = policesListBox.SelectedItem.ToString();
+        #endregion
 
-            policesListBox.Visible = false;
-        }
+        #region Police ListBoxClick
+
+        private void policesListBox_Click(object sender, EventArgs e)
+            {
+                policeToolStripComboBox.Text = policesListBox.SelectedItem.ToString();
+
+                policesListBox.Visible = false;
+            }
+
+        #endregion
+
     }
 }

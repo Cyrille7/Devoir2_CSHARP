@@ -1,7 +1,7 @@
 ﻿/*
     Programmeurs:   Alexandre Roy, Cyrille Fidjio, Jérémie Rousselle, Stéphane Nkontie
-    Date:           18 Octobre 2024
-    But:            Devoir 2 (Phase E) - Fiche des joueurs
+    Date:           22 Octobre 2024
+    But:            Devoir 2 (Phase F) - Fiche des joueurs
 
     Projet:         FichesJoueurs.csproj
     Solution:       FichesJoueurs.sln
@@ -285,6 +285,13 @@ namespace FichesJoueurs
                     parent.italiqueToolStripButton.Checked = infoRichTextBox.SelectionFont.Italic;
                     parent.soulignementToolStripButton.Checked = infoRichTextBox.SelectionFont.Underline;
                 }
+                else
+                {
+                    parent.policeToolStripComboBox.Text = "Microsoft Sans Serif";
+                    if (parent.tailleToolStripComboBox.Text != "12")
+                        parent.tailleToolStripComboBox.Text = "12";
+
+                }
             }
             catch(Exception)
             {
@@ -310,8 +317,12 @@ namespace FichesJoueurs
                 if (infoRichTextBox.Font.FontFamily.IsStyleAvailable(style))
                 {
 
-                    infoRichTextBox.SelectionFont = new Font(infoRichTextBox.SelectionFont,
-                         infoRichTextBox.SelectionFont.Style | style);
+                    if(infoRichTextBox.SelectionFont != null)
+                        infoRichTextBox.SelectionFont = new Font(infoRichTextBox.SelectionFont,
+                             infoRichTextBox.SelectionFont.Style | style);
+                    else
+                        infoRichTextBox.SelectionFont = new Font("Microsoft Sans Serif", 12, style);
+
                 }
 
             }
