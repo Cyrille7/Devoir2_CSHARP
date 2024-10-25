@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechercheForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RechercheForm.Designer.cs">
+      <DependentUpon>RechercheForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="JoueurForm.resx">
       <DependentUpon>JoueurForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +83,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RechercheForm.resx">
+      <DependentUpon>RechercheForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="FichesJoueursClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

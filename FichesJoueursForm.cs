@@ -734,5 +734,31 @@ namespace FichesJoueurs
 
         #endregion
 
+        private void rechercherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+            {
+                try
+                {
+                    JoueurForm oJoueur = (JoueurForm)this.ActiveMdiChild;
+
+                    RechercheForm oRecherche = new RechercheForm();
+
+                    oRecherche.rechercheTextBox.SelectedText = oJoueur.infoRichTextBox.SelectedText;
+
+                    oRecherche.Owner = this;
+
+                    oRecherche.Mot = oJoueur.infoRichTextBox.SelectedText;
+
+                    oRecherche.Show();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(c.tabMessagesErreursStr[(int)c.CodeErreurs.CECreationNouveauEnfantErreur]);
+                }
+
+            }
+               
+        }
     }
 }

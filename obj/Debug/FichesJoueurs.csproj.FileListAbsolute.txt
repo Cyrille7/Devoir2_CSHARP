@@ -42,3 +42,4 @@ C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Deb
 C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.csproj.CoreCompileInputs.cache
 C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.exe
 C:\Microsoft\CoursDeProg\PROG1236\DevoirEtProjet\Devoir 2\Devoir2_CSHARP\obj\Debug\FichesJoueurs.pdb
+F:\CCNB\Cours\2eme Annee\Session 1\Prog 1236 C#\FichesJoueurs\Devoir2_CSHARP\obj\Debug\FichesJoueurs.RechercheForm.resources

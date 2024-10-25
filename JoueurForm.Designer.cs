@@ -93,6 +93,7 @@
             // infoRichTextBox
             // 
             this.infoRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoRichTextBox.HideSelection = false;
             this.infoRichTextBox.Location = new System.Drawing.Point(89, 119);
             this.infoRichTextBox.Name = "infoRichTextBox";
             this.infoRichTextBox.Size = new System.Drawing.Size(286, 196);
